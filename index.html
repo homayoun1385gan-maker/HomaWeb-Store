@@ -1,608 +1,546 @@
-package com.homaweb.store
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-import android.os.Bundle
-import androidx.activity.ComponentActivity
-import androidx.activity.compose.setContent
-import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Arrangement
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.PaddingValues
-import androidx.compose.foundation.layout.Row
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.fillMaxWidth
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBarsPadding
-import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Button
-import androidx.compose.material3.ButtonDefaults
-import androidx.compose.material3.Card
-import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.OutlinedTextField
-import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
-import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
-import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
-import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.text.style.TextAlign
-import androidx.compose.ui.unit.dp
-import androidx.compose.ui.unit.sp
-import com.homaweb.store.ui.theme.MyApplicationTheme
+    <title>HomaWeb Store | فروشگاه خدمات دیجیتال</title>
 
-private val HomaPurple = Color(0xFF7138E8)
-private val HomaBackground = Color(0xFFF8F5FF)
-private val HomaText = Color(0xFF241A35)
-private val HomaGray = Color(0xFF77727F)
+    <meta name="description" content="فروشگاه خدمات دیجیتال HomaWeb؛ طراحی سایت، اپلیکیشن، ربات و تبلیغات حرفه‌ای">
 
-data class Product(
-    val name: String,
-    val description: String,
-    val price: String
-)
-
-private val products = listOf(
-    Product(
-        "ربات اختصاصی",
-        "طراحی و ساخت ربات حرفه‌ای برای کسب‌وکار",
-        "تماس برای قیمت"
-    ),
-    Product(
-        "تبلیغات حرفه‌ای",
-        "معرفی کسب‌وکار و تبلیغات هدفمند",
-        "تماس برای قیمت"
-    ),
-    Product(
-        "طراحی سایت",
-        "ساخت سایت حرفه‌ای و واکنش‌گرا",
-        "تماس برای قیمت"
-    ),
-    Product(
-        "طراحی اپلیکیشن",
-        "ساخت اپلیکیشن اندروید اختصاصی",
-        "تماس برای قیمت"
-    )
-)
-
-class MainActivity : ComponentActivity() {
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-
-        setContent {
-            MyApplicationTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = HomaBackground
-                ) {
-                    HomaWebStore()
-                }
-            }
-        }
-    }
-}
-
-@Composable
-fun HomaWebStore() {
-
-    var page by remember {
-        mutableStateOf("خانه")
-    }
-
-    var search by remember {
-        mutableStateOf("")
-    }
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(HomaBackground)
-    ) {
-
-        Box(
-            modifier = Modifier
-                .weight(1f)
-                .fillMaxWidth()
-        ) {
-
-            when (page) {
-
-                "خانه" -> {
-                    HomePage(
-                        onProducts = {
-                            page = "محصولات"
-                        }
-                    )
-                }
-
-                "محصولات" -> {
-                    ProductsPage(
-                        search = search,
-                        onSearch = {
-                            search = it
-                        }
-                    )
-                }
-
-                "سبد خرید" -> {
-                    CartPage()
-                }
-
-                "حساب کاربری" -> {
-                    AccountPage()
-                }
-            }
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
 
-        BottomBar(
-            selected = page,
-            onSelected = {
-                page = it
-            }
-        )
-    }
-}
-
-@Composable
-fun HomePage(
-    onProducts: () -> Unit
-) {
-
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = PaddingValues(18.dp),
-        verticalArrangement = Arrangement.spacedBy(16.dp)
-    ) {
-
-        item {
-
-            Text(
-                text = "HomaWeb Store",
-                fontSize = 30.sp,
-                fontWeight = FontWeight.ExtraBold,
-                color = HomaText
-            )
-
-            Spacer(
-                modifier = Modifier.height(5.dp)
-            )
-
-            Text(
-                text = "فروشگاه خدمات دیجیتال",
-                fontSize = 16.sp,
-                color = HomaGray
-            )
+        body {
+            font-family:
+                Tahoma,
+                Arial,
+                sans-serif;
+            background: #f8f5ff;
+            color: #241a35;
+            line-height: 1.8;
         }
 
-        item {
-
-            Card(
-                modifier = Modifier.fillMaxWidth(),
-                shape = RoundedCornerShape(28.dp),
-                colors = CardDefaults.cardColors(
-                    containerColor = HomaPurple
-                )
-            ) {
-
-                Column(
-                    modifier = Modifier.padding(24.dp)
-                ) {
-
-                    Text(
-                        text = "همه چیز برای رشد کسب‌وکار شما",
-                        color = Color.White,
-                        fontSize = 23.sp,
-                        fontWeight = FontWeight.Bold
-                    )
-
-                    Spacer(
-                        modifier = Modifier.height(10.dp)
-                    )
-
-                    Text(
-                        text = "ربات، تبلیغات، سایت و اپلیکیشن در یک فروشگاه.",
-                        color = Color.White,
-                        fontSize = 14.sp
-                    )
-
-                    Spacer(
-                        modifier = Modifier.height(18.dp)
-                    )
-
-                    Button(
-                        onClick = onProducts,
-                        colors = ButtonDefaults.buttonColors(
-                            containerColor = Color.White,
-                            contentColor = HomaPurple
-                        ),
-                        shape = RoundedCornerShape(15.dp)
-                    ) {
-                        Text("مشاهده خدمات")
-                    }
-                }
-            }
+        a {
+            text-decoration: none;
+            color: inherit;
         }
 
-        item {
-
-            Text(
-                text = "خدمات پیشنهادی",
-                fontSize = 21.sp,
-                fontWeight = FontWeight.Bold,
-                color = HomaText
-            )
+        .container {
+            width: min(1100px, 92%);
+            margin: auto;
         }
 
-        items(products) { product ->
-            ProductCard(product)
-        }
-    }
-}
+        /* Header */
 
-@Composable
-fun ProductsPage(
-    search: String,
-    onSearch: (String) -> Unit
-) {
-
-    val result = products.filter {
-        it.name.contains(search, ignoreCase = true) ||
-                it.description.contains(search, ignoreCase = true)
-    }
-
-    LazyColumn(
-        modifier = Modifier.fillMaxSize(),
-        contentPadding = PaddingValues(18.dp),
-        verticalArrangement = Arrangement.spacedBy(14.dp)
-    ) {
-
-        item {
-
-            Text(
-                text = "محصولات و خدمات",
-                fontSize = 28.sp,
-                fontWeight = FontWeight.ExtraBold,
-                color = HomaText
-            )
-
-            Spacer(
-                modifier = Modifier.height(12.dp)
-            )
-
-            OutlinedTextField(
-                value = search,
-                onValueChange = onSearch,
-                modifier = Modifier.fillMaxWidth(),
-                label = {
-                    Text("جستجو")
-                },
-                placeholder = {
-                    Text("مثلاً طراحی سایت")
-                },
-                singleLine = true,
-                shape = RoundedCornerShape(16.dp)
-            )
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            border-bottom: 1px solid #eee6ff;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            backdrop-filter: blur(10px);
         }
 
-        items(result) { product ->
-            ProductCard(product)
+        .navbar {
+            min-height: 72px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 20px;
         }
 
-        if (result.isEmpty()) {
-
-            item {
-
-                Text(
-                    text = "محصولی پیدا نشد.",
-                    modifier = Modifier.fillMaxWidth(),
-                    textAlign = TextAlign.Center,
-                    color = HomaGray
-                )
-            }
-        }
-    }
-}
-
-@Composable
-fun ProductCard(
-    product: Product
-) {
-
-    Card(
-        modifier = Modifier
-            .fillMaxWidth()
-            .clickable { },
-        shape = RoundedCornerShape(22.dp),
-        colors = CardDefaults.cardColors(
-            containerColor = Color.White
-        )
-    ) {
-
-        Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(18.dp),
-            verticalAlignment = Alignment.CenterVertically
-        ) {
-
-            Box(
-                modifier = Modifier
-                    .size(58.dp)
-                    .background(
-                        HomaPurple.copy(alpha = 0.12f),
-                        RoundedCornerShape(18.dp)
-                    ),
-                contentAlignment = Alignment.Center
-            ) {
-
-                Text(
-                    text = "★",
-                    color = HomaPurple,
-                    fontSize = 26.sp
-                )
-            }
-
-            Spacer(
-                modifier = Modifier.width(14.dp)
-            )
-
-            Column(
-                modifier = Modifier.weight(1f)
-            ) {
-
-                Text(
-                    text = product.name,
-                    fontSize = 18.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = HomaText
-                )
-
-                Spacer(
-                    modifier = Modifier.height(5.dp)
-                )
-
-                Text(
-                    text = product.description,
-                    fontSize = 13.sp,
-                    color = HomaGray
-                )
-
-                Spacer(
-                    modifier = Modifier.height(7.dp)
-                )
-
-                Text(
-                    text = product.price,
-                    fontSize = 14.sp,
-                    fontWeight = FontWeight.Bold,
-                    color = HomaPurple
-                )
-            }
-        }
-    }
-}
-
-@Composable
-fun CartPage() {
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(18.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-
-        Text(
-            text = "🛒",
-            fontSize = 55.sp
-        )
-
-        Spacer(
-            modifier = Modifier.height(16.dp)
-        )
-
-        Text(
-            text = "سبد خرید",
-            fontSize = 27.sp,
-            fontWeight = FontWeight.ExtraBold,
-            color = HomaText
-        )
-
-        Spacer(
-            modifier = Modifier.height(8.dp)
-        )
-
-        Text(
-            text = "سبد خرید شما خالی است.",
-            fontSize = 15.sp,
-            color = HomaGray
-        )
-    }
-}
-
-@Composable
-fun AccountPage() {
-
-    Column(
-        modifier = Modifier
-            .fillMaxSize()
-            .padding(18.dp),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center
-    ) {
-
-        Box(
-            modifier = Modifier
-                .size(90.dp)
-                .background(
-                    HomaPurple.copy(alpha = 0.12f),
-                    RoundedCornerShape(45.dp)
-                ),
-            contentAlignment = Alignment.Center
-        ) {
-
-            Text(
-                text = "👤",
-                fontSize = 42.sp
-            )
+        .logo {
+            font-size: 24px;
+            font-weight: 900;
+            color: #7138e8;
         }
 
-        Spacer(
-            modifier = Modifier.height(18.dp)
-        )
-
-        Text(
-            text = "حساب کاربری",
-            fontSize = 27.sp,
-            fontWeight = FontWeight.ExtraBold,
-            color = HomaText
-        )
-
-        Spacer(
-            modifier = Modifier.height(8.dp)
-        )
-
-        Text(
-            text = "برای ورود یا ساخت حساب کاربری اقدام کنید.",
-            fontSize = 14.sp,
-            color = HomaGray,
-            textAlign = TextAlign.Center
-        )
-
-        Spacer(
-            modifier = Modifier.height(20.dp)
-        )
-
-        Button(
-            onClick = { },
-            colors = ButtonDefaults.buttonColors(
-                containerColor = HomaPurple
-            ),
-            shape = RoundedCornerShape(15.dp)
-        ) {
-
-            Text(
-                text = "ورود به حساب"
-            )
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
-    }
-}
 
-@Composable
-fun BottomBar(
-    selected: String,
-    onSelected: (String) -> Unit
-) {
+        .nav-links a {
+            padding: 8px 14px;
+            border-radius: 12px;
+            color: #5c5368;
+            font-size: 14px;
+        }
 
-    Row(
-        modifier = Modifier
-            .fillMaxWidth()
-            .background(Color.White)
-            .navigationBarsPadding()
-            .padding(
-                horizontal = 8.dp,
-                vertical = 10.dp
-            ),
-        horizontalArrangement = Arrangement.SpaceEvenly,
-        verticalAlignment = Alignment.CenterVertically
-    ) {
+        .nav-links a:hover {
+            background: #f0e9ff;
+            color: #7138e8;
+        }
 
-        BottomItem(
-            title = "خانه",
-            icon = "⌂",
-            selected = selected == "خانه",
-            onClick = {
-                onSelected("خانه")
+        /* Hero */
+
+        .hero {
+            margin-top: 35px;
+            background: linear-gradient(
+                135deg,
+                #7138e8,
+                #4e22a7
+            );
+            color: white;
+            border-radius: 30px;
+            padding: 55px 35px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.08);
+            left: -70px;
+            bottom: -90px;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 720px;
+        }
+
+        .hero h1 {
+            font-size: clamp(32px, 6vw, 55px);
+            line-height: 1.3;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            opacity: 0.92;
+            margin-bottom: 25px;
+        }
+
+        .button {
+            display: inline-block;
+            background: white;
+            color: #7138e8;
+            padding: 12px 22px;
+            border-radius: 15px;
+            font-weight: bold;
+            transition: 0.2s;
+        }
+
+        .button:hover {
+            transform: translateY(-2px);
+        }
+
+        /* Sections */
+
+        section {
+            padding: 55px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .section-title h2 {
+            font-size: 30px;
+            margin-bottom: 5px;
+        }
+
+        .section-title p {
+            color: #77727f;
+        }
+
+        /* Services */
+
+        .services {
+            display: grid;
+            grid-template-columns: repeat(
+                auto-fit,
+                minmax(220px, 1fr)
+            );
+            gap: 18px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #eee7fa;
+            border-radius: 22px;
+            padding: 25px;
+            box-shadow: 0 8px 25px rgba(60, 30, 100, 0.05);
+            transition: 0.2s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 14px 30px rgba(60, 30, 100, 0.1);
+        }
+
+        .icon {
+            width: 58px;
+            height: 58px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f0e9ff;
+            color: #7138e8;
+            border-radius: 18px;
+            font-size: 27px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            font-size: 19px;
+            margin-bottom: 7px;
+        }
+
+        .card p {
+            color: #77727f;
+            font-size: 14px;
+        }
+
+        .price {
+            color: #7138e8;
+            font-weight: bold;
+            margin-top: 12px;
+        }
+
+        /* About */
+
+        .about {
+            background: white;
+            border-radius: 28px;
+            padding: 35px;
+            border: 1px solid #eee7fa;
+        }
+
+        .about h2 {
+            margin-bottom: 12px;
+        }
+
+        .about p {
+            color: #625b6d;
+        }
+
+        /* Contact */
+
+        .contact-box {
+            background: #241a35;
+            color: white;
+            border-radius: 28px;
+            padding: 40px 25px;
+            text-align: center;
+        }
+
+        .contact-box p {
+            color: #d9d2e5;
+            margin: 10px 0 25px;
+        }
+
+        .contact-button {
+            display: inline-block;
+            background: #7138e8;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 15px;
+            font-weight: bold;
+        }
+
+        /* Footer */
+
+        footer {
+            text-align: center;
+            padding: 30px 15px;
+            color: #77727f;
+            font-size: 13px;
+        }
+
+        /* Mobile */
+
+        @media (max-width: 650px) {
+
+            .navbar {
+                min-height: 65px;
             }
-        )
 
-        BottomItem(
-            title = "محصولات",
-            icon = "▦",
-            selected = selected == "محصولات",
-            onClick = {
-                onSelected("محصولات")
+            .logo {
+                font-size: 20px;
             }
-        )
 
-        BottomItem(
-            title = "سبد خرید",
-            icon = "🛒",
-            selected = selected == "سبد خرید",
-            onClick = {
-                onSelected("سبد خرید")
+            .nav-links {
+                display: none;
             }
-        )
 
-        BottomItem(
-            title = "حساب کاربری",
-            icon = "●",
-            selected = selected == "حساب کاربری",
-            onClick = {
-                onSelected("حساب کاربری")
+            .hero {
+                padding: 40px 23px;
+                border-radius: 24px;
             }
-        )
-    }
-}
 
-@Composable
-fun BottomItem(
-    title: String,
-    icon: String,
-    selected: Boolean,
-    onClick: () -> Unit
-) {
-
-    Column(
-        modifier = Modifier
-            .clickable(onClick = onClick)
-            .padding(
-                horizontal = 10.dp,
-                vertical = 4.dp
-            ),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-
-        Text(
-            text = icon,
-            fontSize = 22.sp,
-            color = if (selected) {
-                HomaPurple
-            } else {
-                HomaGray
+            .hero p {
+                font-size: 15px;
             }
-        )
 
-        Spacer(
-            modifier = Modifier.height(3.dp)
-        )
-
-        Text(
-            text = title,
-            fontSize = 11.sp,
-            fontWeight = if (selected) {
-                FontWeight.Bold
-            } else {
-                FontWeight.Normal
-            },
-            color = if (selected) {
-                HomaPurple
-            } else {
-                HomaGray
+            section {
+                padding: 40px 0;
             }
-        )
-    }
-}
+
+            .section-title h2 {
+                font-size: 25px;
+            }
+
+            .about {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="container navbar">
+
+        <div class="logo">
+            HomaWeb Store
+        </div>
+
+        <nav class="nav-links">
+            <a href="#home">خانه</a>
+            <a href="#services">خدمات</a>
+            <a href="#about">درباره ما</a>
+            <a href="#contact">تماس</a>
+        </nav>
+
+    </div>
+</header>
+
+
+<main>
+
+    <!-- Hero -->
+
+    <section id="home">
+
+        <div class="container">
+
+            <div class="hero">
+
+                <div class="hero-content">
+
+                    <h1>
+                        فروشگاه خدمات دیجیتال HomaWeb
+                    </h1>
+
+                    <p>
+                        طراحی سایت، اپلیکیشن، ربات و تبلیغات حرفه‌ای
+                        برای رشد کسب‌وکار شما.
+                    </p>
+
+                    <a
+                        href="#services"
+                        class="button"
+                    >
+                        مشاهده خدمات
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Services -->
+
+    <section id="services">
+
+        <div class="container">
+
+            <div class="section-title">
+
+                <h2>
+                    خدمات ما
+                </h2>
+
+                <p>
+                    خدمات حرفه‌ای HomaWeb برای کسب‌وکار شما
+                </p>
+
+            </div>
+
+
+            <div class="services">
+
+                <div class="card">
+
+                    <div class="icon">
+                        🤖
+                    </div>
+
+                    <h3>
+                        ربات اختصاصی
+                    </h3>
+
+                    <p>
+                        طراحی و ساخت ربات حرفه‌ای
+                        برای کسب‌وکار و خدمات آنلاین.
+                    </p>
+
+                    <div class="price">
+                        تماس برای قیمت
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        📢
+                    </div>
+
+                    <h3>
+                        تبلیغات حرفه‌ای
+                    </h3>
+
+                    <p>
+                        معرفی کسب‌وکار و اجرای
+                        تبلیغات هدفمند.
+                    </p>
+
+                    <div class="price">
+                        تماس برای قیمت
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        🌐
+                    </div>
+
+                    <h3>
+                        طراحی سایت
+                    </h3>
+
+                    <p>
+                        طراحی سایت مدرن، سریع،
+                        حرفه‌ای و واکنش‌گرا.
+                    </p>
+
+                    <div class="price">
+                        تماس برای قیمت
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="icon">
+                        📱
+                    </div>
+
+                    <h3>
+                        طراحی اپلیکیشن
+                    </h3>
+
+                    <p>
+                        ساخت اپلیکیشن اندروید
+                        اختصاصی برای کسب‌وکار شما.
+                    </p>
+
+                    <div class="price">
+                        تماس برای قیمت
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- About -->
+
+    <section id="about">
+
+        <div class="container">
+
+            <div class="about">
+
+                <h2>
+                    درباره HomaWeb
+                </h2>
+
+                <p>
+                    HomaWeb یک مجموعه فعال در زمینه خدمات
+                    دیجیتال، طراحی سایت، ساخت اپلیکیشن،
+                    توسعه ربات و تبلیغات آنلاین است.
+                    هدف ما ارائه خدمات حرفه‌ای و کاربردی
+                    برای رشد کسب‌وکارهای اینترنتی است.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contact -->
+
+    <section id="contact">
+
+        <div class="container">
+
+            <div class="contact-box">
+
+                <h2>
+                    آماده همکاری هستید؟
+                </h2>
+
+                <p>
+                    برای سفارش خدمات یا دریافت اطلاعات
+                    بیشتر با ما در ارتباط باشید.
+                </p>
+
+                <a
+                    href="https://t.me/HomaWeb"
+                    class="contact-button"
+                    target="_blank"
+                >
+                    تماس با HomaWeb
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    © 2026 HomaWeb Store
+    <br>
+    فروشگاه خدمات دیجیتال HomaWeb
+
+</footer>
+
+</body>
+    </html>
