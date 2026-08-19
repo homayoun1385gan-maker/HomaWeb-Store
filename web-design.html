@@ -1,1 +1,1746 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>طراحی سایت حرفه‌ای | HomaWeb Store</title>
+
+  <meta name="description" content="خدمات طراحی سایت HomaWeb شامل سایت ساده، حرفه‌ای، فروشگاهی و اختصاصی با طراحی واکنش‌گرا، تجربه کاربری حرفه‌ای و ساختار مناسب سئو.">
+  <meta name="keywords" content="طراحی سایت, طراحی سایت حرفه ای, طراحی سایت فروشگاهی, طراحی سایت اختصاصی, طراحی سایت شرکتی, ساخت سایت, HomaWeb">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HomaWeb Store">
+
+  <meta property="og:title" content="طراحی سایت | HomaWeb Store">
+  <meta property="og:description" content="طراحی سایت ساده، حرفه‌ای، فروشگاهی و اختصاصی برای کسب‌وکارها.">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f8f5ff;
+      color: #241a35;
+      line-height: 1.9;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    textarea,
+    select {
+      font-family: inherit;
+    }
+
+    :root {
+      --purple: #7138e8;
+      --purple-dark: #4e22a7;
+      --purple-light: #f0eaff;
+      --background: #f8f5ff;
+      --text: #241a35;
+      --gray: #77727f;
+      --white: #ffffff;
+      --border: #e8defb;
+      --green: #18a66a;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(248,245,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(113,56,232,.08);
+    }
+
+    .header-inner {
+      width: min(1180px, calc(100% - 32px));
+      min-height: 76px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 20px;
+      font-weight: 900;
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: #fff;
+      font-size: 20px;
+      background: linear-gradient(135deg,#7138e8,#4e22a7);
+      box-shadow: 0 10px 28px rgba(113,56,232,.25);
+      animation: logoFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes logoFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-4px);
+      }
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    nav a {
+      padding: 9px 13px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gray);
+      transition: .25s;
+    }
+
+    nav a:hover {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    .header-button {
+      color: #fff;
+      background: linear-gradient(135deg,var(--purple),var(--purple-dark));
+      padding: 11px 17px;
+      border-radius: 13px;
+      font-size: 13px;
+      font-weight: 800;
+      box-shadow: 0 9px 22px rgba(113,56,232,.2);
+    }
+
+    /* HERO */
+
+    .hero {
+      width: min(1180px, calc(100% - 32px));
+      margin: 35px auto 0;
+      min-height: 330px;
+      border-radius: 32px;
+      overflow: hidden;
+      position: relative;
+      background:
+        radial-gradient(circle at 85% 25%, rgba(255,255,255,.2), transparent 25%),
+        linear-gradient(135deg,#7138e8,#4e22a7);
+      color: #fff;
+      box-shadow: 0 20px 55px rgba(78,34,167,.22);
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      width: 260px;
+      height: 260px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      left: -80px;
+      bottom: -100px;
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding: 55px;
+      max-width: 760px;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.2);
+      font-size: 12px;
+      font-weight: 800;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(30px,5vw,48px);
+      line-height: 1.35;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    .hero h1 span {
+      color: #e6d9ff;
+    }
+
+    .hero p {
+      font-size: 15px;
+      color: rgba(255,255,255,.88);
+      max-width: 650px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 18px;
+      border-radius: 14px;
+      font-size: 13px;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-white {
+      background: #fff;
+      color: var(--purple);
+    }
+
+    .btn-transparent {
+      color: #fff;
+      border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.1);
+    }
+
+    /* SECTION */
+
+    .section {
+      width: min(1180px, calc(100% - 32px));
+      margin: 70px auto 0;
+    }
+
+    .section-title {
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto 32px;
+    }
+
+    .section-title small {
+      display: inline-block;
+      color: var(--purple);
+      background: var(--purple-light);
+      border-radius: 999px;
+      padding: 6px 12px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .section-title h2 {
+      font-size: 30px;
+      margin: 12px 0 8px;
+      font-weight: 900;
+    }
+
+    .section-title p {
+      color: var(--gray);
+      font-size: 14px;
+    }
+
+    /* FEATURES */
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+    }
+
+    .feature {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 22px;
+      text-align: center;
+      box-shadow: 0 10px 30px rgba(50,25,90,.05);
+      transition: .3s;
+    }
+
+    .feature:hover {
+      transform: translateY(-7px);
+      box-shadow: 0 18px 40px rgba(78,34,167,.12);
+    }
+
+    .feature-icon {
+      width: 58px;
+      height: 58px;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      border-radius: 18px;
+      background: var(--purple-light);
+      font-size: 27px;
+    }
+
+    .feature h3 {
+      margin-top: 13px;
+      font-size: 16px;
+    }
+
+    .feature p {
+      margin-top: 6px;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    /* PRICING */
+
+    .pricing {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 17px;
+    }
+
+    .price-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 25px;
+      padding: 25px;
+      position: relative;
+      box-shadow: 0 12px 35px rgba(50,25,90,.06);
+      transition: .3s;
+    }
+
+    .price-card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 50px rgba(78,34,167,.14);
+    }
+
+    .price-card.featured {
+      border: 2px solid var(--purple);
+      transform: translateY(-8px);
+    }
+
+    .price-card.featured:hover {
+      transform: translateY(-12px);
+    }
+
+    .popular {
+      position: absolute;
+      top: 15px;
+      left: 15px;
+      background: var(--purple);
+      color: #fff;
+      padding: 5px 9px;
+      border-radius: 999px;
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .price-icon {
+      font-size: 31px;
+    }
+
+    .price-card h3 {
+      font-size: 19px;
+      margin-top: 8px;
+    }
+
+    .price {
+      margin-top: 13px;
+      color: var(--purple);
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    .price span {
+      color: var(--gray);
+      font-size: 11px;
+      font-weight: 500;
+    }
+
+    .price-description {
+      color: var(--gray);
+      font-size: 12px;
+      min-height: 72px;
+      margin: 12px 0;
+    }
+
+    .features-list {
+      list-style: none;
+      border-top: 1px solid #eee8f8;
+      padding-top: 15px;
+    }
+
+    .features-list li {
+      color: #514a5e;
+      font-size: 12px;
+      padding: 5px 0;
+    }
+
+    .features-list li::before {
+      content: "✓";
+      color: var(--green);
+      font-weight: 900;
+      margin-left: 7px;
+    }
+
+    .price-button {
+      width: 100%;
+      margin-top: 18px;
+      background: linear-gradient(135deg,var(--purple),var(--purple-dark));
+      color: #fff;
+    }
+
+    .price-button.secondary {
+      background: var(--purple-light);
+      color: var(--purple);
+    }
+
+    /* COMPARISON */
+
+    .comparison {
+      overflow-x: auto;
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 12px 35px rgba(50,25,90,.05);
+    }
+
+    table {
+      width: 100%;
+      min-width: 720px;
+      border-collapse: collapse;
+    }
+
+    th,
+    td {
+      padding: 15px;
+      text-align: center;
+      border-bottom: 1px solid #eee8f8;
+      font-size: 12px;
+    }
+
+    th {
+      color: var(--purple);
+      background: #faf8ff;
+      font-weight: 900;
+    }
+
+    td:first-child {
+      text-align: right;
+      font-weight: 800;
+    }
+
+    .yes {
+      color: var(--green);
+      font-size: 17px;
+      font-weight: 900;
+    }
+
+    .no {
+      color: #bbb;
+      font-size: 17px;
+    }
+
+    /* PROCESS */
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 15px;
+    }
+
+    .process-card {
+      background: #fff;
+      border-radius: 22px;
+      padding: 24px;
+      border: 1px solid var(--border);
+      position: relative;
+      text-align: center;
+    }
+
+    .process-number {
+      width: 45px;
+      height: 45px;
+      display: grid;
+      place-items: center;
+      margin: auto;
+      border-radius: 50%;
+      color: #fff;
+      font-weight: 900;
+      background: linear-gradient(135deg,var(--purple),var(--purple-dark));
+    }
+
+    .process-card h3 {
+      margin-top: 13px;
+      font-size: 16px;
+    }
+
+    .process-card p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* PORTFOLIO */
+
+    .portfolio {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 18px;
+    }
+
+    .portfolio-card {
+      overflow: hidden;
+      background: #fff;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      box-shadow: 0 10px 30px rgba(50,25,90,.05);
+      transition: .3s;
+    }
+
+    .portfolio-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .portfolio-image {
+      height: 190px;
+      display: grid;
+      place-items: center;
+      font-size: 58px;
+      background:
+        linear-gradient(135deg,#eee7ff,#faf9ff);
+    }
+
+    .portfolio-info {
+      padding: 19px;
+    }
+
+    .portfolio-info h3 {
+      font-size: 16px;
+    }
+
+    .portfolio-info p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* ORDER */
+
+    .order-box {
+      background:
+        radial-gradient(circle at 10% 20%,rgba(255,255,255,.13),transparent 25%),
+        linear-gradient(135deg,#241a35,#4e22a7);
+      border-radius: 30px;
+      padding: 38px;
+      color: #fff;
+    }
+
+    .order-box h2 {
+      font-size: 28px;
+    }
+
+    .order-box > p {
+      color: rgba(255,255,255,.8);
+      margin-top: 7px;
+      font-size: 13px;
+    }
+
+    .order-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 13px;
+      margin-top: 25px;
+    }
+
+    .field-full {
+      grid-column: 1 / -1;
+    }
+
+    .order-form input,
+    .order-form select,
+    .order-form textarea {
+      width: 100%;
+      border: 0;
+      outline: 0;
+      border-radius: 14px;
+      padding: 13px 15px;
+      color: var(--text);
+      background: #fff;
+      font-size: 13px;
+    }
+
+    .order-form textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .order-submit {
+      background: #fff;
+      color: var(--purple);
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+    }
+
+    details {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 17px;
+      margin-bottom: 10px;
+      padding: 16px 19px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    details p {
+      color: var(--gray);
+      font-size: 12px;
+      margin-top: 10px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      margin-top: 70px;
+      padding: 30px;
+      border-radius: 27px;
+      background: #fff;
+      border: 1px solid var(--border);
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 24px;
+    }
+
+    .contact p {
+      color: var(--gray);
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .contact-links {
+      margin-top: 20px;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .contact-links a {
+      padding: 11px 15px;
+      border-radius: 13px;
+      background: var(--purple-light);
+      color: var(--purple);
+      font-size: 12px;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .contact-links a:hover {
+      transform: translateY(-3px);
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 70px;
+      background: #241a35;
+      color: #fff;
+      padding: 35px 20px;
+    }
+
+    .footer-inner {
+      width: min(1180px, calc(100% - 32px));
+      margin: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    footer p {
+      color: rgba(255,255,255,.65);
+      font-size: 12px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      color: rgba(255,255,255,.8);
+      font-size: 12px;
+    }
+
+    /* SUPPORT */
+
+    .support {
+      position: fixed;
+      left: 18px;
+      bottom: 20px;
+      z-index: 9999;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #fff;
+      background: linear-gradient(135deg,#7138e8,#4e22a7);
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 900;
+      box-shadow: 0 12px 35px rgba(78,34,167,.35);
+      animation: supportFloat 2.8s ease-in-out infinite;
+    }
+
+    .support-icon {
+      width: 30px;
+      height: 30px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      background: rgba(255,255,255,.16);
+    }
+
+    @keyframes supportFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    /* RESPONSIVE */
+
+    @media(max-width:950px) {
+      .features,
+      .pricing,
+      .process {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .portfolio {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      nav {
+        display: none;
+      }
+    }
+
+    @media(max-width:650px) {
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .hero {
+        min-height: 390px;
+        margin-top: 18px;
+        border-radius: 25px;
+      }
+
+      .hero-content {
+        padding: 35px 24px;
+      }
+
+      .hero h1 {
+        font-size: 29px;
+      }
+
+      .section {
+        margin-top: 50px;
+      }
+
+      .features,
+      .pricing,
+      .process,
+      .portfolio {
+        grid-template-columns: 1fr;
+      }
+
+      .price-card.featured {
+        transform: none;
+      }
+
+      .order-box {
+        padding: 25px 18px;
+      }
+
+      .order-form {
+        grid-template-columns: 1fr;
+      }
+
+      .field-full {
+        grid-column: auto;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .support {
+        left: 10px;
+        bottom: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <a class="logo" href="index.html">
+      <span class="logo-mark">H</span>
+      <span>HomaWeb Store</span>
+    </a>
+
+    <nav>
+      <a href="index.html">خانه</a>
+      <a href="#plans">قیمت‌ها</a>
+      <a href="#features">امکانات</a>
+      <a href="#portfolio">نمونه‌کار</a>
+      <a href="#faq">سؤالات متداول</a>
+    </nav>
+
+    <a class="header-button" href="#order">
+      شروع پروژه
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="hero">
+
+    <div class="hero-content">
+
+      <div class="hero-badge">
+        <span>●</span>
+        طراحی سایت توسط HomaWeb
+      </div>
+
+      <h1>
+        سایت حرفه‌ای شما،
+        <span>شروع یک حضور قدرتمند</span>
+      </h1>
+
+      <p>
+        از یک سایت ساده برای معرفی کسب‌وکار تا فروشگاه اینترنتی
+        و پروژه اختصاصی؛ HomaWeb راهکار متناسب با نیاز شما را طراحی می‌کند.
+      </p>
+
+      <div class="hero-buttons">
+
+        <a class="btn btn-white" href="#plans">
+          مشاهده قیمت‌ها
+        </a>
+
+        <a class="btn btn-transparent" href="#portfolio">
+          مشاهده نمونه‌ها
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FEATURES -->
+
+  <section id="features" class="section">
+
+    <div class="section-title">
+
+      <small>چرا HomaWeb؟</small>
+
+      <h2>
+        فقط یک سایت نمی‌سازیم
+      </h2>
+
+      <p>
+        هدف، ساخت یک حضور دیجیتال حرفه‌ای و قابل توسعه برای کسب‌وکار شماست.
+      </p>
+
+    </div>
+
+
+    <div class="features">
+
+      <article class="feature">
+        <div class="feature-icon">📱</div>
+        <h3>واکنش‌گرا</h3>
+        <p>
+          نمایش مناسب در موبایل، تبلت و کامپیوتر.
+        </p>
+      </article>
+
+
+      <article class="feature">
+        <div class="feature-icon">🚀</div>
+        <h3>ساختار حرفه‌ای</h3>
+        <p>
+          طراحی منظم برای تجربه کاربری بهتر.
+        </p>
+      </article>
+
+
+      <article class="feature">
+        <div class="feature-icon">🔎</div>
+        <h3>آماده SEO</h3>
+        <p>
+          ساختار مناسب برای دیده‌شدن در موتورهای جستجو.
+        </p>
+      </article>
+
+
+      <article class="feature">
+        <div class="feature-icon">⚡</div>
+        <h3>قابل توسعه</h3>
+        <p>
+          امکان اضافه‌کردن امکانات در آینده.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- PRICING -->
+
+  <section id="plans" class="section">
+
+    <div class="section-title">
+
+      <small>پلن‌های طراحی سایت</small>
+
+      <h2>
+        پلن مناسب کسب‌وکار خود را انتخاب کنید
+      </h2>
+
+      <p>
+        قیمت‌های زیر قیمت پایه خدمات هستند و امکانات اختصاصی می‌تواند
+        بر اساس نیاز پروژه تغییر کند.
+      </p>
+
+    </div>
+
+
+    <div class="pricing">
+
+      <!-- SIMPLE -->
+
+      <article class="price-card">
+
+        <div class="price-icon">🌱</div>
+
+        <h3>
+          سایت ساده
+        </h3>
+
+        <div class="price">
+          ۱۰ میلیون
+          <span>تومان</span>
+        </div>
+
+        <p class="price-description">
+          مناسب معرفی کسب‌وکار، خدمات، برند شخصی و مجموعه‌های کوچک.
+        </p>
+
+        <ul class="features-list">
+          <li>طراحی واکنش‌گرا</li>
+          <li>صفحات معرفی و خدمات</li>
+          <li>صفحه تماس</li>
+          <li>ساختار پایه SEO</li>
+          <li>طراحی اختصاصی ظاهر</li>
+        </ul>
+
+        <a class="btn price-button secondary" href="#order">
+          انتخاب پلن
+        </a>
+
+      </article>
+
+
+      <!-- PROFESSIONAL -->
+
+      <article class="price-card featured">
+
+        <span class="popular">
+          محبوب‌ترین
+        </span>
+
+        <div class="price-icon">🚀</div>
+
+        <h3>
+          سایت حرفه‌ای
+        </h3>
+
+        <div class="price">
+          ۲۵ میلیون
+          <span>تومان</span>
+        </div>
+
+        <p class="price-description">
+          سایت حرفه‌ای تا ۱۵ صفحه برای برندها و کسب‌وکارهایی که حضور جدی آنلاین می‌خواهند.
+        </p>
+
+        <ul class="features-list">
+          <li>تا ۱۵ صفحه</li>
+          <li>طراحی UI اختصاصی</li>
+          <li>نسخه موبایل</li>
+          <li>SEO پایه و ساختاری</li>
+          <li>فرم‌های ارتباطی</li>
+          <li>انیمیشن‌های رابط کاربری</li>
+        </ul>
+
+        <a class="btn price-button" href="#order">
+          انتخاب پلن
+        </a>
+
+      </article>
+
+
+      <!-- SHOP -->
+
+      <article class="price-card">
+
+        <div class="price-icon">🛒</div>
+
+        <h3>
+          سایت فروشگاهی
+        </h3>
+
+        <div class="price">
+          ۲۱ میلیون
+          <span>تومان</span>
+        </div>
+
+        <p class="price-description">
+          فروشگاه اینترنتی تا ۱۲ صفحه برای معرفی و فروش محصولات.
+        </p>
+
+        <ul class="features-list">
+          <li>تا ۱۲ صفحه</li>
+          <li>صفحه محصولات</li>
+          <li>دسته‌بندی محصولات</li>
+          <li>سبد خرید</li>
+          <li>فرم سفارش</li>
+          <li>طراحی واکنش‌گرا</li>
+        </ul>
+
+        <a class="btn price-button secondary" href="#order">
+          انتخاب پلن
+        </a>
+
+      </article>
+
+
+      <!-- CUSTOM -->
+
+      <article class="price-card">
+
+        <div class="price-icon">⚙️</div>
+
+        <h3>
+          سایت اختصاصی
+        </h3>
+
+        <div class="price">
+          ۱۳ میلیون
+          <span>تومان</span>
+        </div>
+
+        <p class="price-description">
+          مناسب پروژه‌هایی که ساختار و امکانات آن‌ها باید متناسب با ایده مشتری طراحی شود.
+        </p>
+
+        <ul class="features-list">
+          <li>تا ۱۳ صفحه</li>
+          <li>طراحی متناسب پروژه</li>
+          <li>امکانات اختصاصی</li>
+          <li>ساختار قابل توسعه</li>
+          <li>طراحی موبایل</li>
+        </ul>
+
+        <a class="btn price-button secondary" href="#order">
+          درخواست مشاوره
+        </a>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- COMPARISON -->
+
+  <section class="section">
+
+    <div class="section-title">
+
+      <small>مقایسه</small>
+
+      <h2>
+        تفاوت پلن‌ها
+      </h2>
+
+    </div>
+
+
+    <div class="comparison">
+
+      <table>
+
+        <thead>
+          <tr>
+            <th>امکانات</th>
+            <th>ساده</th>
+            <th>حرفه‌ای</th>
+            <th>فروشگاهی</th>
+            <th>اختصاصی</th>
+          </tr>
+        </thead>
+
+        <tbody>
+
+          <tr>
+            <td>طراحی واکنش‌گرا</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>ساختار SEO</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+
+          <tr>
+            <td>صفحات متعدد</td>
+            <td>پایه</td>
+            <td>۱۵ صفحه</td>
+            <td>۱۲ صفحه</td>
+            <td>۱۳ صفحه</td>
+          </tr>
+
+          <tr>
+            <td>فروشگاه</td>
+            <td class="no">—</td>
+            <td class="no">—</td>
+            <td class="yes">✓</td>
+            <td>در صورت نیاز</td>
+          </tr>
+
+          <tr>
+            <td>امکانات اختصاصی</td>
+            <td class="no">—</td>
+            <td>متوسط</td>
+            <td>متوسط</td>
+            <td>✓</td>
+          </tr>
+
+          <tr>
+            <td>انیمیشن رابط کاربری</td>
+            <td>پایه</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+            <td class="yes">✓</td>
+          </tr>
+
+        </tbody>
+
+      </table>
+
+    </div>
+
+  </section>
+
+
+  <!-- PROCESS -->
+
+  <section class="section">
+
+    <div class="section-title">
+
+      <small>روند اجرا</small>
+
+      <h2>
+        پروژه چطور پیش می‌رود؟
+      </h2>
+
+      <p>
+        از ایده اولیه تا آماده‌شدن سایت، مراحل پروژه مشخص است.
+      </p>
+
+    </div>
+
+
+    <div class="process">
+
+      <article class="process-card">
+        <div class="process-number">۱</div>
+        <h3>مشاوره</h3>
+        <p>
+          نیازها و هدف سایت بررسی می‌شود.
+        </p>
+      </article>
+
+      <article class="process-card">
+        <div class="process-number">۲</div>
+        <h3>طراحی</h3>
+        <p>
+          ساختار و ظاهر مناسب پروژه طراحی می‌شود.
+        </p>
+      </article>
+
+      <article class="process-card">
+        <div class="process-number">۳</div>
+        <h3>پیاده‌سازی</h3>
+        <p>
+          صفحات و امکانات موردنظر ساخته می‌شوند.
+        </p>
+      </article>
+
+      <article class="process-card">
+        <div class="process-number">۴</div>
+        <h3>تحویل</h3>
+        <p>
+          پروژه بررسی و برای انتشار آماده می‌شود.
+        </p>
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- PORTFOLIO -->
+
+  <section id="portfolio" class="section">
+
+    <div class="section-title">
+
+      <small>نمونه‌های نمایشی</small>
+
+      <h2>
+        برای هر کسب‌وکار یک سبک
+      </h2>
+
+      <p>
+        نمونه‌های زیر نمایشی هستند و می‌توان ظاهر پروژه واقعی را متناسب با برند شما طراحی کرد.
+      </p>
+
+    </div>
+
+
+    <div class="portfolio">
+
+      <article class="portfolio-card">
+
+        <div class="portfolio-image">
+          🏢
+        </div>
+
+        <div class="portfolio-info">
+          <h3>
+            سایت شرکتی
+          </h3>
+
+          <p>
+            مناسب شرکت‌ها، مجموعه‌ها و کسب‌وکارهای خدماتی.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="portfolio-card">
+
+        <div class="portfolio-image">
+          🛍️
+        </div>
+
+        <div class="portfolio-info">
+          <h3>
+            فروشگاه اینترنتی
+          </h3>
+
+          <p>
+            طراحی ویترین محصول و مسیر سفارش برای فروش آنلاین.
+          </p>
+        </div>
+
+      </article>
+
+
+      <article class="portfolio-card">
+
+        <div class="portfolio-image">
+          🎨
+        </div>
+
+        <div class="portfolio-info">
+          <h3>
+            سایت خلاقانه
+          </h3>
+
+          <p>
+            مناسب برندهای شخصی و پروژه‌هایی که ظاهر متفاوت می‌خواهند.
+          </p>
+        </div>
+
+      </article>
+
+    </div>
+
+  </section>
+
+
+  <!-- ORDER -->
+
+  <section id="order" class="section">
+
+    <div class="order-box">
+
+      <h2>
+        آماده شروع پروژه هستید؟
+      </h2>
+
+      <p>
+        اطلاعات اولیه را وارد کنید تا درخواست شما برای پشتیبانی آماده شود.
+      </p>
+
+
+      <form class="order-form" onsubmit="return sendOrder(event)">
+
+        <div>
+          <input
+            id="name"
+            type="text"
+            placeholder="نام شما"
+            required>
+        </div>
+
+
+        <div>
+          <input
+            id="contact"
+            type="text"
+            placeholder="شماره یا آیدی ارتباطی"
+            required>
+        </div>
+
+
+        <div class="field-full">
+
+          <select id="service" required>
+
+            <option value="">
+              انتخاب پلن
+            </option>
+
+            <option>
+              سایت ساده - ۱۰ میلیون تومان
+            </option>
+
+            <option>
+              سایت حرفه‌ای ۱۵ صفحه - ۲۵ میلیون تومان
+            </option>
+
+            <option>
+              سایت فروشگاهی ۱۲ صفحه - ۲۱ میلیون تومان
+            </option>
+
+            <option>
+              سایت اختصاصی ۱۳ صفحه - ۱۳ میلیون تومان
+            </option>
+
+          </select>
+
+        </div>
+
+
+        <div class="field-full">
+
+          <textarea
+            id="message"
+            placeholder="توضیحات پروژه، تعداد صفحات یا امکانات موردنیاز شما"></textarea>
+
+        </div>
+
+
+        <div class="field-full">
+
+          <button
+            class="btn order-submit"
+            type="submit">
+
+            ارسال درخواست به پشتیبانی
+
+          </button>
+
+        </div>
+
+      </form>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section id="faq" class="section">
+
+    <div class="section-title">
+
+      <small>FAQ</small>
+
+      <h2>
+        سؤالات متداول طراحی سایت
+      </h2>
+
+    </div>
+
+
+    <div class="faq">
+
+      <details>
+        <summary>
+          طراحی سایت چقدر زمان می‌برد؟
+        </summary>
+
+        <p>
+          زمان اجرا به تعداد صفحات، امکانات و پیچیدگی پروژه بستگی دارد.
+          زمان دقیق بعد از بررسی نیازهای پروژه اعلام می‌شود.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          آیا سایت روی موبایل هم درست نمایش داده می‌شود؟
+        </summary>
+
+        <p>
+          بله. طراحی واکنش‌گرا برای نمایش مناسب در موبایل، تبلت و دسکتاپ
+          در نظر گرفته می‌شود.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          آیا سایت برای موتورهای جستجو آماده می‌شود؟
+        </summary>
+
+        <p>
+          ساختار پایه SEO شامل عنوان‌ها، توضیحات، ساختار هدینگ‌ها،
+          لینک‌دهی داخلی و موارد فنی موردنیاز در طراحی در نظر گرفته می‌شود.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          سایت حرفه‌ای چند صفحه دارد؟
+        </summary>
+
+        <p>
+          پلن سایت حرفه‌ای HomaWeb شامل طراحی تا ۱۵ صفحه است.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          سایت فروشگاهی چند صفحه دارد؟
+        </summary>
+
+        <p>
+          پلن فروشگاهی شامل ساختار تا ۱۲ صفحه است و امکانات فروشگاهی
+          بر اساس نیاز پروژه تنظیم می‌شود.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          آیا امکان اضافه‌کردن امکانات جدید وجود دارد؟
+        </summary>
+
+        <p>
+          بله. ساختار پروژه می‌تواند بر اساس نیاز آینده کسب‌وکار توسعه پیدا کند.
+        </p>
+      </details>
+
+
+      <details>
+        <summary>
+          چطور سفارش خودم را ثبت کنم؟
+        </summary>
+
+        <p>
+          فرم سفارش همین صفحه را تکمیل کنید یا مستقیماً با پشتیبانی روبیکا
+          ارتباط بگیرید.
+        </p>
+      </details>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section class="section">
+
+    <div class="contact">
+
+      <h2>
+        برای مشاوره آماده‌ایم
+      </h2>
+
+      <p>
+        برای بررسی پروژه و انتخاب پلن مناسب با ما در ارتباط باشید.
+      </p>
+
+
+      <div class="contact-links">
+
+        <a
+          href="https://rubika.ir/Tabligh_chat"
+          target="_blank"
+          rel="noopener">
+
+          💬 روبیکا: @Tabligh_chat
+
+        </a>
+
+
+        <a
+          href="https://wa.me/989917163319"
+          target="_blank"
+          rel="noopener">
+
+          📱 واتساپ: 09917163319
+
+        </a>
+
+
+        <a
+          href="https://t.me/AfghanDigitalRate"
+          target="_blank"
+          rel="noopener">
+
+          ✈️ تلگرام: @AfghanDigitalRate
+
+        </a>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="footer-inner">
+
+    <p>
+      © 2026 HomaWeb Store — تمامی حقوق محفوظ است.
+    </p>
+
+    <div class="footer-links">
+
+      <a href="index.html">
+        خانه
+      </a>
+
+      <a href="#plans">
+        قیمت‌ها
+      </a>
+
+      <a href="#portfolio">
+        نمونه‌کارها
+      </a>
+
+      <a href="#faq">
+        سوالات متداول
+      </a>
+
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- FLOATING SUPPORT -->
+
+<a
+  class="support"
+  href="https://rubika.ir/Tabligh_chat"
+  target="_blank"
+  rel="noopener"
+  aria-label="پشتیبانی HomaWeb در روبیکا">
+
+  <span class="support-icon">
+    💬
+  </span>
+
+  پشتیبانی
+
+</a>
+
+
+<script>
+
+  function sendOrder(event) {
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const contact =
+      document.getElementById("contact").value.trim();
+
+    const service =
+      document.getElementById("service").value;
+
+    const message =
+      document.getElementById("message").value.trim();
+
+
+    if (!name || !contact || !service) {
+
+      alert("لطفاً اطلاعات ضروری را کامل کنید.");
+
+      return false;
+
+    }
+
+
+    /*
+      GitHub Pages بک‌اند ندارد.
+      بنابراین فرم اطلاعات سفارش را آماده می‌کند
+      و کاربر را به پشتیبانی روبیکا هدایت می‌کند.
+    */
+
+    const text =
+      "سلام، برای سفارش طراحی سایت پیام می‌دهم.%0A%0A" +
+      "نام: " + encodeURIComponent(name) + "%0A" +
+      "راه ارتباطی: " + encodeURIComponent(contact) + "%0A" +
+      "پلن: " + encodeURIComponent(service) + "%0A" +
+      "توضیحات: " + encodeURIComponent(message);
+
+
+    window.open(
+      "https://rubika.ir/Tabligh_chat?text=" + text,
+      "_blank"
+    );
+
+
+    return false;
+
+  }
+
+
+  /* انیمیشن ورود کارت‌ها */
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+
+          }
+
+        });
+
+      },
+      {
+        threshold: .12
+      }
+    );
+
+
+  document
+    .querySelectorAll(
+      ".feature, .price-card, .process-card, .portfolio-card"
+    )
+    .forEach(card => {
+
+      card.style.opacity = "0";
+      card.style.transform = "translateY(22px)";
+      card.style.transition =
+        "opacity .7s ease, transform .7s ease";
+
+      observer.observe(card);
+
+    });
+
+</script>
+
+</body>
+  </html>
