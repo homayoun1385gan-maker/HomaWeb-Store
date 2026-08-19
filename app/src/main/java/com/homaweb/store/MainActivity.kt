@@ -8,13 +8,16 @@ import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.navigationBarsPadding
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.RoundedCornerShape
@@ -22,7 +25,6 @@ import androidx.compose.material3.Button
 import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -109,29 +111,40 @@ fun HomaWebStore() {
             .background(HomaBackground)
     ) {
 
-        when (page) {
+        Box(
+            modifier = Modifier
+                .weight(1f)
+                .fillMaxWidth()
+        ) {
 
-            "خانه" -> HomePage(
-                onProducts = {
-                    page = "محصولات"
+            when (page) {
+
+                "خانه" -> {
+                    HomePage(
+                        onProducts = {
+                            page = "محصولات"
+                        }
+                    )
                 }
-            )
 
-            "محصولات" -> ProductsPage(
-                search = search,
-                onSearch = {
-                    search = it
+                "محصولات" -> {
+                    ProductsPage(
+                        search = search,
+                        onSearch = {
+                            search = it
+                        }
+                    )
                 }
-            )
 
-            "سبد خرید" -> CartPage()
+                "سبد خرید" -> {
+                    CartPage()
+                }
 
-            "حساب کاربری" -> AccountPage()
+                "حساب کاربری" -> {
+                    AccountPage()
+                }
+            }
         }
-
-        Spacer(
-            modifier = Modifier.weight(1f)
-        )
 
         BottomBar(
             selected = page,
@@ -149,9 +162,7 @@ fun HomePage(
 
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
-        contentPadding = androidx.compose.foundation.layout.PaddingValues(
-            18.dp
-        ),
+        contentPadding = PaddingValues(18.dp),
         verticalArrangement = Arrangement.spacedBy(16.dp)
     ) {
 
@@ -235,7 +246,6 @@ fun HomePage(
         }
 
         items(products) { product ->
-
             ProductCard(product)
         }
     }
@@ -254,9 +264,7 @@ fun ProductsPage(
 
     LazyColumn(
         modifier = Modifier.fillMaxSize(),
-        contentPadding = androidx.compose.foundation.layout.PaddingValues(
-            18.dp
-        ),
+        contentPadding = PaddingValues(18.dp),
         verticalArrangement = Arrangement.spacedBy(14.dp)
     ) {
 
@@ -289,7 +297,6 @@ fun ProductsPage(
         }
 
         items(result) { product ->
-
             ProductCard(product)
         }
 
@@ -348,7 +355,7 @@ fun ProductCard(
             }
 
             Spacer(
-                modifier = Modifier.size(14.dp)
+                modifier = Modifier.width(14.dp)
             )
 
             Column(
@@ -380,3 +387,222 @@ fun ProductCard(
                     text = product.price,
                     fontSize = 14.sp,
                     fontWeight = FontWeight.Bold,
+                    color = HomaPurple
+                )
+            }
+        }
+    }
+}
+
+@Composable
+fun CartPage() {
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(18.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+
+        Text(
+            text = "🛒",
+            fontSize = 55.sp
+        )
+
+        Spacer(
+            modifier = Modifier.height(16.dp)
+        )
+
+        Text(
+            text = "سبد خرید",
+            fontSize = 27.sp,
+            fontWeight = FontWeight.ExtraBold,
+            color = HomaText
+        )
+
+        Spacer(
+            modifier = Modifier.height(8.dp)
+        )
+
+        Text(
+            text = "سبد خرید شما خالی است.",
+            fontSize = 15.sp,
+            color = HomaGray
+        )
+    }
+}
+
+@Composable
+fun AccountPage() {
+
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .padding(18.dp),
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Center
+    ) {
+
+        Box(
+            modifier = Modifier
+                .size(90.dp)
+                .background(
+                    HomaPurple.copy(alpha = 0.12f),
+                    RoundedCornerShape(45.dp)
+                ),
+            contentAlignment = Alignment.Center
+        ) {
+
+            Text(
+                text = "👤",
+                fontSize = 42.sp
+            )
+        }
+
+        Spacer(
+            modifier = Modifier.height(18.dp)
+        )
+
+        Text(
+            text = "حساب کاربری",
+            fontSize = 27.sp,
+            fontWeight = FontWeight.ExtraBold,
+            color = HomaText
+        )
+
+        Spacer(
+            modifier = Modifier.height(8.dp)
+        )
+
+        Text(
+            text = "برای ورود یا ساخت حساب کاربری اقدام کنید.",
+            fontSize = 14.sp,
+            color = HomaGray,
+            textAlign = TextAlign.Center
+        )
+
+        Spacer(
+            modifier = Modifier.height(20.dp)
+        )
+
+        Button(
+            onClick = { },
+            colors = ButtonDefaults.buttonColors(
+                containerColor = HomaPurple
+            ),
+            shape = RoundedCornerShape(15.dp)
+        ) {
+
+            Text(
+                text = "ورود به حساب"
+            )
+        }
+    }
+}
+
+@Composable
+fun BottomBar(
+    selected: String,
+    onSelected: (String) -> Unit
+) {
+
+    Row(
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.White)
+            .navigationBarsPadding()
+            .padding(
+                horizontal = 8.dp,
+                vertical = 10.dp
+            ),
+        horizontalArrangement = Arrangement.SpaceEvenly,
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+
+        BottomItem(
+            title = "خانه",
+            icon = "⌂",
+            selected = selected == "خانه",
+            onClick = {
+                onSelected("خانه")
+            }
+        )
+
+        BottomItem(
+            title = "محصولات",
+            icon = "▦",
+            selected = selected == "محصولات",
+            onClick = {
+                onSelected("محصولات")
+            }
+        )
+
+        BottomItem(
+            title = "سبد خرید",
+            icon = "🛒",
+            selected = selected == "سبد خرید",
+            onClick = {
+                onSelected("سبد خرید")
+            }
+        )
+
+        BottomItem(
+            title = "حساب کاربری",
+            icon = "●",
+            selected = selected == "حساب کاربری",
+            onClick = {
+                onSelected("حساب کاربری")
+            }
+        )
+    }
+}
+
+@Composable
+fun BottomItem(
+    title: String,
+    icon: String,
+    selected: Boolean,
+    onClick: () -> Unit
+) {
+
+    Column(
+        modifier = Modifier
+            .clickable(onClick = onClick)
+            .padding(
+                horizontal = 10.dp,
+                vertical = 4.dp
+            ),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+
+        Text(
+            text = icon,
+            fontSize = 22.sp,
+            color = if (selected) {
+                HomaPurple
+            } else {
+                HomaGray
+            }
+        )
+
+        Spacer(
+            modifier = Modifier.height(3.dp)
+        )
+
+        Text(
+            text = title,
+            fontSize = 11.sp,
+            fontWeight = if (selected) {
+                FontWeight.Bold
+            } else {
+                FontWeight.Normal
+            },
+            color = if (selected) {
+                HomaPurple
+            } else {
+                HomaGray
+            }
+        )
+    }
+}
