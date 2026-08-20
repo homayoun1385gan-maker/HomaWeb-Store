@@ -1,1 +1,1500 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>تماس و ثبت سفارش | HomaWeb Store</title>
+  <meta name="description" content="ثبت سفارش و ارتباط با HomaWeb برای طراحی سایت، طراحی ربات، تبلیغات و خدمات دیجیتال اختصاصی. درخواست خود را ارسال کنید و برای مشاوره با پشتیبانی HomaWeb ارتباط بگیرید.">
+  <meta name="keywords" content="تماس HomaWeb, سفارش طراحی سایت, سفارش ربات, سفارش تبلیغات, خدمات دیجیتال, HomaWeb Store">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="author" content="HomaWeb">
+
+  <link rel="canonical" href="https://homayoun1385gan-maker.github.io/HomaWeb-Store/contact.html">
+
+  <meta property="og:title" content="تماس و ثبت سفارش | HomaWeb">
+  <meta property="og:description" content="ثبت درخواست طراحی سایت، ربات، تبلیغات و خدمات دیجیتال HomaWeb.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://homayoun1385gan-maker.github.io/HomaWeb-Store/contact.html">
+  <meta property="og:site_name" content="HomaWeb Store">
+
+  <meta name="theme-color" content="#7138E8">
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ContactPage",
+    "name":"تماس و ثبت سفارش HomaWeb",
+    "url":"https://homayoun1385gan-maker.github.io/HomaWeb-Store/contact.html",
+    "description":"صفحه تماس و ثبت سفارش خدمات دیجیتال HomaWeb."
+  }
+  </script>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f8f5ff;
+      color: #241a35;
+      line-height: 1.8;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    :root {
+      --purple: #7138e8;
+      --purple-dark: #4d20b8;
+      --dark: #241a35;
+      --gray: #77727f;
+      --light: #eee6ff;
+      --white: #ffffff;
+      --green: #20b878;
+      --border: rgba(113,56,232,.12);
+      --shadow: 0 20px 60px rgba(57,24,122,.10);
+    }
+
+    .container {
+      width: min(1180px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(113,56,232,.08);
+    }
+
+    .header-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      color: var(--purple);
+      font-size: 20px;
+      font-weight: 950;
+    }
+
+    .logo {
+      width: 48px;
+      height: 48px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      color: white;
+      font-size: 25px;
+      font-weight: 950;
+      background: linear-gradient(145deg,#874eff,#5720c7);
+      box-shadow: 0 12px 30px rgba(113,56,232,.28);
+    }
+
+    .back {
+      padding: 9px 17px;
+      border-radius: 14px;
+      background: var(--light);
+      color: var(--purple);
+      font-weight: 850;
+      transition: .25s;
+    }
+
+    .back:hover {
+      transform: translateY(-2px);
+    }
+
+    /* HERO */
+
+    .hero {
+      margin-top: 32px;
+      position: relative;
+      overflow: hidden;
+      border-radius: 34px;
+      padding: 48px;
+      color: white;
+      background: linear-gradient(135deg,var(--purple),var(--purple-dark));
+      box-shadow: 0 30px 80px rgba(77,32,184,.24);
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      background: rgba(255,255,255,.08);
+      animation: floatOrb 7s ease-in-out infinite;
+    }
+
+    .hero::before {
+      width: 360px;
+      height: 360px;
+      left: -150px;
+      bottom: -220px;
+    }
+
+    .hero::after {
+      width: 260px;
+      height: 260px;
+      right: -110px;
+      top: -160px;
+      animation-delay: -2s;
+    }
+
+    @keyframes floatOrb {
+      0%,100% {
+        transform: translate(0,0);
+      }
+
+      50% {
+        transform: translate(20px,-18px);
+      }
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 750px;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.13);
+      border: 1px solid rgba(255,255,255,.2);
+      font-weight: 850;
+    }
+
+    .hero h1 {
+      margin: 18px 0 10px;
+      font-size: clamp(32px,5vw,54px);
+      line-height: 1.35;
+      font-weight: 950;
+    }
+
+    .hero p {
+      margin: 0;
+      max-width: 680px;
+      color: rgba(255,255,255,.9);
+      font-size: 16px;
+    }
+
+    .dynamic-word {
+      display: inline-block;
+      transition: .35s;
+    }
+
+    /* CONTACT GRID */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .card {
+      background: white;
+      border-radius: 28px;
+      padding: 30px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .card h2 {
+      margin-top: 0;
+      font-size: 27px;
+      font-weight: 950;
+    }
+
+    .card-description {
+      color: var(--gray);
+      font-size: 14px;
+      margin-top: -7px;
+      margin-bottom: 25px;
+    }
+
+    /* FORM */
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: repeat(2,1fr);
+      gap: 15px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 850;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      border: 1px solid #ddd7e8;
+      outline: none;
+      border-radius: 15px;
+      padding: 13px 14px;
+      background: #fff;
+      color: var(--dark);
+      font-family: inherit;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    textarea {
+      min-height: 145px;
+      resize: vertical;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: var(--purple);
+      box-shadow: 0 0 0 4px rgba(113,56,232,.09);
+    }
+
+    .submit-btn {
+      width: 100%;
+      margin-top: 18px;
+      border: 0;
+      cursor: pointer;
+      padding: 15px;
+      border-radius: 16px;
+      color: white;
+      font-family: inherit;
+      font-size: 15px;
+      font-weight: 950;
+      background: linear-gradient(135deg,var(--purple),var(--purple-dark));
+      box-shadow: 0 15px 35px rgba(113,56,232,.25);
+      transition: .25s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .form-note {
+      text-align: center;
+      color: var(--gray);
+      font-size: 11px;
+      margin: 12px 0 0;
+    }
+
+    /* CONTACT METHODS */
+
+    .methods {
+      display: grid;
+      gap: 13px;
+    }
+
+    .method {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 16px;
+      border-radius: 20px;
+      background: #faf9fd;
+      border: 1px solid var(--border);
+      transition: .25s;
+    }
+
+    .method:hover {
+      transform: translateX(-5px);
+      background: #f5f0ff;
+    }
+
+    .method-icon {
+      width: 50px;
+      height: 50px;
+      flex: 0 0 50px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--light);
+      font-size: 22px;
+    }
+
+    .method h3 {
+      margin: 0;
+      font-size: 16px;
+    }
+
+    .method p {
+      margin: 2px 0 0;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    /* ORDER INFO */
+
+    .order-info {
+      margin-top: 20px;
+      padding: 22px;
+      border-radius: 22px;
+      background: linear-gradient(145deg,#7138e8,#4d20b8);
+      color: white;
+    }
+
+    .order-info h3 {
+      margin-top: 0;
+    }
+
+    .order-info ul {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    .order-info li {
+      margin: 8px 0;
+      color: rgba(255,255,255,.9);
+      font-size: 13px;
+    }
+
+    .order-info li::before {
+      content: "✓";
+      margin-left: 8px;
+      color: #86ffc1;
+      font-weight: 950;
+    }
+
+    /* STEPS */
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      margin: 0 0 8px;
+      font-size: clamp(27px,4vw,40px);
+      font-weight: 950;
+    }
+
+    .section-title p {
+      margin: auto;
+      max-width: 700px;
+      color: var(--gray);
+    }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .step {
+      text-align: center;
+      padding: 25px 18px;
+      background: white;
+      border-radius: 23px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      transition: .3s;
+    }
+
+    .step:hover {
+      transform: translateY(-7px);
+    }
+
+    .step-number {
+      width: 52px;
+      height: 52px;
+      margin: auto;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background: var(--purple);
+      font-weight: 950;
+      font-size: 20px;
+    }
+
+    .step h3 {
+      margin: 12px 0 5px;
+    }
+
+    .step p {
+      margin: 0;
+      color: var(--gray);
+      font-size: 12px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 18px 20px;
+      box-shadow: 0 10px 30px rgba(57,24,122,.05);
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    details p {
+      color: var(--gray);
+      font-size: 13px;
+      margin-bottom: 0;
+    }
+
+    /* CTA */
+
+    .cta {
+      text-align: center;
+      padding: 50px 25px;
+      border-radius: 32px;
+      color: white;
+      background: linear-gradient(135deg,var(--purple),var(--purple-dark));
+      box-shadow: 0 30px 75px rgba(77,32,184,.2);
+    }
+
+    .cta h2 {
+      margin: 0 0 10px;
+      font-size: 32px;
+    }
+
+    .cta p {
+      max-width: 650px;
+      margin: 0 auto 20px;
+      color: rgba(255,255,255,.88);
+    }
+
+    .cta-button {
+      display: inline-flex;
+      padding: 13px 22px;
+      border-radius: 15px;
+      color: var(--purple);
+      background: white;
+      font-weight: 950;
+      transition: .25s;
+    }
+
+    .cta-button:hover {
+      transform: translateY(-3px);
+    }
+
+    /* SUPPORT */
+
+    .support {
+      position: fixed;
+      z-index: 5000;
+      left: 16px;
+      bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 17px;
+      border-radius: 999px;
+      color: white;
+      font-weight: 900;
+      background: linear-gradient(135deg,var(--purple),var(--purple-dark));
+      box-shadow: 0 18px 45px rgba(77,32,184,.35);
+      animation: supportFloat 2.5s infinite;
+    }
+
+    .online {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #6dffb4;
+      box-shadow: 0 0 0 5px rgba(109,255,180,.14);
+    }
+
+    @keyframes supportFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+
+      50% {
+        transform: translateY(-5px);
+      }
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 30px;
+      padding: 42px 0 22px;
+      color: white;
+      background: #20172f;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.4fr 1fr 1fr;
+      gap: 35px;
+    }
+
+    footer h3 {
+      margin-top: 0;
+    }
+
+    footer p,
+    footer li {
+      color: #c8c0d2;
+      font-size: 13px;
+    }
+
+    footer ul {
+      padding: 0;
+      list-style: none;
+    }
+
+    footer li {
+      margin: 8px 0;
+    }
+
+    .copyright {
+      text-align: center;
+      margin-top: 28px;
+      padding-top: 17px;
+      border-top: 1px solid rgba(255,255,255,.1);
+      color: #aaa1b5;
+      font-size: 11px;
+    }
+
+    /* REVEAL */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .steps {
+        grid-template-columns: repeat(2,1fr);
+      }
+    }
+
+    @media(max-width:620px) {
+      .header-inner {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 16px;
+      }
+
+      .logo {
+        width: 43px;
+        height: 43px;
+      }
+
+      .hero {
+        padding: 30px 22px;
+        border-radius: 27px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .form-grid,
+      .steps {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 52px 0;
+      }
+
+      .card {
+        padding: 22px;
+      }
+
+      .support {
+        left: 10px;
+        bottom: 10px;
+        padding: 10px 14px;
+        font-size: 13px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container header-inner">
+
+    <a href="index.html" class="brand">
+      <span class="logo">H</span>
+      <span>HomaWeb Store</span>
+    </a>
+
+    <a href="index.html" class="back">
+      ← صفحه اصلی
+    </a>
+
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="container">
+
+    <div class="hero">
+
+      <div class="hero-content">
+
+        <span class="badge">
+          📩 ثبت سفارش و ارتباط
+        </span>
+
+        <h1>
+          پروژه بعدی شما
+          <br>
+          <span id="dynamicWord" class="dynamic-word">
+            از اینجا شروع می‌شود
+          </span>
+        </h1>
+
+        <p>
+          برای طراحی سایت، ساخت ربات، تبلیغات یا
+          یک راهکار دیجیتال اختصاصی، اطلاعات پروژه
+          خود را ارسال کنید یا مستقیماً با پشتیبانی
+          HomaWeb ارتباط بگیرید.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CONTACT -->
+
+  <section>
+
+    <div class="container contact-grid">
+
+      <!-- FORM -->
+
+      <div class="card">
+
+        <h2>
+          ثبت درخواست پروژه
+        </h2>
+
+        <p class="card-description">
+          فرم زیر را تکمیل کنید. پس از انتخاب گزینه
+          «ارسال درخواست»، پیام آماده سفارش در
+          روبیکا باز می‌شود تا آن را برای پشتیبانی
+          ارسال کنید.
+        </p>
+
+        <form id="orderForm">
+
+          <div class="form-grid">
+
+            <div class="field">
+
+              <label for="name">
+                نام شما
+              </label>
+
+              <input
+                id="name"
+                type="text"
+                placeholder="نام و نام خانوادگی"
+                required>
+
+            </div>
+
+            <div class="field">
+
+              <label for="contact">
+                راه ارتباطی
+              </label>
+
+              <input
+                id="contact"
+                type="text"
+                placeholder="شماره یا آیدی"
+                required>
+
+            </div>
+
+            <div class="field">
+
+              <label for="service">
+                نوع خدمت
+              </label>
+
+              <select id="service" required>
+
+                <option value="">
+                  انتخاب خدمت
+                </option>
+
+                <option>
+                  طراحی سایت
+                </option>
+
+                <option>
+                  طراحی ربات
+                </option>
+
+                <option>
+                  تبلیغات
+                </option>
+
+                <option>
+                  اپلیکیشن
+                </option>
+
+                <option>
+                  پروژه اختصاصی
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="field">
+
+              <label for="budget">
+                حدود بودجه
+              </label>
+
+              <select id="budget">
+
+                <option>
+                  هنوز مشخص نیست
+                </option>
+
+                <option>
+                  کمتر از ۵ میلیون
+                </option>
+
+                <option>
+                  ۵ تا ۱۰ میلیون
+                </option>
+
+                <option>
+                  ۱۰ تا ۲۰ میلیون
+                </option>
+
+                <option>
+                  بالای ۲۰ میلیون
+                </option>
+
+              </select>
+
+            </div>
+
+            <div class="field full">
+
+              <label for="details">
+                توضیحات پروژه
+              </label>
+
+              <textarea
+                id="details"
+                placeholder="مثلاً چه امکاناتی می‌خواهید؟ چند صفحه؟ چه نوع رباتی؟ چه نوع تبلیغاتی؟"
+                required></textarea>
+
+            </div>
+
+          </div>
+
+          <button
+            type="submit"
+            class="submit-btn">
+            🚀 آماده‌سازی درخواست سفارش
+          </button>
+
+          <p class="form-note">
+            با زدن این دکمه اطلاعات در سایت ذخیره نمی‌شود؛
+            پیام سفارش در دستگاه شما آماده می‌شود.
+          </p>
+
+        </form>
+
+      </div>
+
+      <!-- METHODS -->
+
+      <aside>
+
+        <div class="card">
+
+          <h2>
+            ارتباط مستقیم
+          </h2>
+
+          <p class="card-description">
+            برای سفارش سریع می‌توانید مستقیماً
+            از یکی از راه‌های زیر با ما ارتباط بگیرید.
+          </p>
+
+          <div class="methods">
+
+            <a
+              class="method"
+              href="https://rubika.ir/Tabligh_chat"
+              target="_blank"
+              rel="noopener">
+
+              <div class="method-icon">
+                💬
+              </div>
+
+              <div>
+                <h3>
+                  روبیکا
+                </h3>
+
+                <p>
+                  @Tabligh_chat
+                </p>
+              </div>
+
+            </a>
+
+            <a
+              class="method"
+              href="https://wa.me/989917163319"
+              target="_blank"
+              rel="noopener">
+
+              <div class="method-icon">
+                📱
+              </div>
+
+              <div>
+                <h3>
+                  واتساپ
+                </h3>
+
+                <p>
+                  09917163319
+                </p>
+              </div>
+
+            </a>
+
+            <a
+              class="method"
+              href="https://t.me/AfghanDigitalRate"
+              target="_blank"
+              rel="noopener">
+
+              <div class="method-icon">
+                ✈️
+              </div>
+
+              <div>
+                <h3>
+                  تلگرام
+                </h3>
+
+                <p>
+                  @AfghanDigitalRate
+                </p>
+              </div>
+
+            </a>
+
+          </div>
+
+          <div class="order-info">
+
+            <h3>
+              قبل از سفارش چه چیزهایی آماده کنیم؟
+            </h3>
+
+            <ul>
+
+              <li>
+                توضیح کوتاه درباره ایده
+              </li>
+
+              <li>
+                امکانات موردنظر
+              </li>
+
+              <li>
+                تعداد صفحات در صورت طراحی سایت
+              </li>
+
+              <li>
+                پلتفرم موردنظر برای ربات
+              </li>
+
+              <li>
+                نمونه یا سبک مورد علاقه
+              </li>
+
+            </ul>
+
+          </div>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </section>
+
+  <!-- STEPS -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          بعد از ارسال درخواست چه اتفاقی می‌افتد؟
+        </h2>
+
+        <p>
+          مسیر سفارش ساده و مشخص است.
+        </p>
+
+      </div>
+
+      <div class="steps">
+
+        <div class="step reveal">
+
+          <div class="step-number">
+            ۱
+          </div>
+
+          <h3>
+            دریافت درخواست
+          </h3>
+
+          <p>
+            جزئیات پروژه برای پشتیبانی ارسال می‌شود.
+          </p>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">
+            ۲
+          </div>
+
+          <h3>
+            بررسی نیاز
+          </h3>
+
+          <p>
+            امکانات، حجم کار و نیازهای پروژه بررسی می‌شود.
+          </p>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">
+            ۳
+          </div>
+
+          <h3>
+            توافق
+          </h3>
+
+          <p>
+            جزئیات اجرا و هزینه با توجه به پروژه مشخص می‌شود.
+          </p>
+
+        </div>
+
+        <div class="step reveal">
+
+          <div class="step-number">
+            ۴
+          </div>
+
+          <h3>
+            شروع پروژه
+          </h3>
+
+          <p>
+            پس از توافق، مراحل اجرای پروژه آغاز می‌شود.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- FAQ -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>
+          سوالات متداول سفارش
+        </h2>
+
+        <p>
+          پاسخ چند سؤال مهم قبل از ثبت درخواست.
+        </p>
+
+      </div>
+
+      <div class="faq">
+
+        <details class="reveal">
+
+          <summary>
+            آیا ثبت این فرم به معنی پرداخت هزینه است؟
+          </summary>
+
+          <p>
+            خیر. این فرم فقط اطلاعات درخواست را
+            آماده می‌کند و برای بررسی پروژه است.
+            شرایط و هزینه نهایی پس از بررسی پروژه
+            مشخص می‌شود.
+          </p>
+
+        </details>
+
+        <details class="reveal">
+
+          <summary>
+            آیا می‌توانم قبل از سفارش مشاوره بگیرم؟
+          </summary>
+
+          <p>
+            بله. می‌توانید از طریق پشتیبانی روبیکا،
+            واتساپ یا تلگرام درباره ایده و نیاز خود
+            صحبت کنید.
+          </p>
+
+        </details>
+
+        <details class="reveal">
+
+          <summary>
+            اگر هنوز دقیقاً نمی‌دانم چه خدمتی نیاز دارم چه کنم؟
+          </summary>
+
+          <p>
+            کافی است ایده خود را توضیح دهید.
+            انتخاب سرویس مناسب می‌تواند در مرحله
+            بررسی درخواست انجام شود.
+          </p>
+
+        </details>
+
+        <details class="reveal">
+
+          <summary>
+            آیا پروژه اختصاصی هم پذیرفته می‌شود؟
+          </summary>
+
+          <p>
+            بله، پروژه‌های اختصاصی نیز قابل بررسی
+            هستند و امکانات و هزینه آنها بر اساس
+            نیاز پروژه تعیین می‌شود.
+          </p>
+
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+
+  <section class="container">
+
+    <div class="cta">
+
+      <h2>
+        هنوز آماده تکمیل فرم نیستید؟
+      </h2>
+
+      <p>
+        مستقیماً با پشتیبانی HomaWeb صحبت کنید
+        و ایده خود را توضیح دهید.
+      </p>
+
+      <a
+        class="cta-button"
+        href="https://rubika.ir/Tabligh_chat"
+        target="_blank"
+        rel="noopener">
+        💬 ارتباط با @Tabligh_chat
+      </a>
+
+    </div>
+
+  </section>
+
+</main>
+
+<!-- FLOATING SUPPORT -->
+
+<a
+  class="support"
+  href="https://rubika.ir/Tabligh_chat"
+  target="_blank"
+  rel="noopener">
+
+  <span class="online"></span>
+  💬 پشتیبانی
+
+</a>
+
+<!-- FOOTER -->
+
+<footer>
+
+  <div class="container">
+
+    <div class="footer-grid">
+
+      <div>
+
+        <h3>
+          HomaWeb Store
+        </h3>
+
+        <p>
+          خدمات دیجیتال شامل طراحی سایت،
+          ربات، تبلیغات و پروژه‌های اختصاصی.
+        </p>
+
+      </div>
+
+      <div>
+
+        <h3>
+          صفحات
+        </h3>
+
+        <ul>
+
+          <li>
+            <a href="index.html">
+              صفحه اصلی
+            </a>
+          </li>
+
+          <li>
+            <a href="web-design.html">
+              طراحی سایت
+            </a>
+          </li>
+
+          <li>
+            <a href="bots.html">
+              ربات‌ها
+            </a>
+          </li>
+
+          <li>
+            <a href="ads.html">
+              تبلیغات
+            </a>
+          </li>
+
+          <li>
+            <a href="about.html">
+              درباره ما
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+      <div>
+
+        <h3>
+          ارتباط
+        </h3>
+
+        <ul>
+
+          <li>
+            <a
+              href="https://rubika.ir/Tabligh_chat"
+              target="_blank"
+              rel="noopener">
+              روبیکا: @Tabligh_chat
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://wa.me/989917163319"
+              target="_blank"
+              rel="noopener">
+              واتساپ: 09917163319
+            </a>
+          </li>
+
+          <li>
+            <a
+              href="https://t.me/AfghanDigitalRate"
+              target="_blank"
+              rel="noopener">
+              تلگرام: @AfghanDigitalRate
+            </a>
+          </li>
+
+        </ul>
+
+      </div>
+
+    </div>
+
+    <div class="copyright">
+      © 2026 HomaWeb Store — تمامی حقوق محفوظ است.
+    </div>
+
+  </div>
+
+</footer>
+
+<script>
+
+  /* DYNAMIC HERO */
+
+  const words = [
+    "از اینجا شروع می‌شود",
+    "با یک ایده شروع می‌شود",
+    "با یک سایت حرفه‌ای ساخته می‌شود",
+    "با یک ربات هوشمند ساده‌تر می‌شود",
+    "با تبلیغات بهتر دیده می‌شود"
+  ];
+
+  const dynamicWord =
+    document.getElementById("dynamicWord");
+
+  let wordIndex = 0;
+
+  setInterval(() => {
+
+    dynamicWord.style.opacity = "0";
+    dynamicWord.style.transform =
+      "translateY(10px)";
+
+    setTimeout(() => {
+
+      wordIndex =
+        (wordIndex + 1) % words.length;
+
+      dynamicWord.textContent =
+        words[wordIndex];
+
+      dynamicWord.style.opacity = "1";
+      dynamicWord.style.transform =
+        "translateY(0)";
+
+    }, 350);
+
+  }, 2500);
+
+
+  /* ORDER FORM */
+
+  const form =
+    document.getElementById("orderForm");
+
+  form.addEventListener("submit", function(event) {
+
+    event.preventDefault();
+
+    const name =
+      document.getElementById("name").value.trim();
+
+    const contact =
+      document.getElementById("contact").value.trim();
+
+    const service =
+      document.getElementById("service").value;
+
+    const budget =
+      document.getElementById("budget").value;
+
+    const details =
+      document.getElementById("details").value.trim();
+
+    const message =
+`سلام HomaWeb 👋
+
+درخواست سفارش جدید
+
+👤 نام:
+${name}
+
+📞 راه ارتباطی:
+${contact}
+
+🛠 خدمت موردنظر:
+${service}
+
+💰 حدود بودجه:
+${budget}
+
+📝 توضیحات پروژه:
+${details}
+
+لطفاً درخواست من را بررسی کنید.`;
+
+    /*
+      Rubika امکان قرار دادن پیام آماده
+      در لینک عمومی را در همه نسخه‌ها تضمین نمی‌کند.
+      بنابراین ابتدا تلاش می‌کنیم پیام را در Clipboard
+      قرار دهیم و سپس صفحه پشتیبانی را باز کنیم.
+    */
+
+    if (navigator.clipboard) {
+
+      navigator.clipboard.writeText(message)
+        .then(() => {
+
+          alert(
+            "متن درخواست کپی شد. حالا در صفحه پشتیبانی روبیکا آن را Paste و ارسال کنید."
+          );
+
+          window.open(
+            "https://rubika.ir/Tabligh_chat",
+            "_blank",
+            "noopener"
+          );
+
+        })
+        .catch(() => {
+
+          window.open(
+            "https://rubika.ir/Tabligh_chat",
+            "_blank",
+            "noopener"
+          );
+
+        });
+
+    } else {
+
+      window.open(
+        "https://rubika.ir/Tabligh_chat",
+        "_blank",
+        "noopener"
+      );
+
+    }
+
+  });
+
+
+  /* SCROLL REVEAL */
+
+  const elements =
+    document.querySelectorAll(".reveal");
+
+  const observer =
+    new IntersectionObserver(
+      entries => {
+
+        entries.forEach(entry => {
+
+          if (entry.isIntersecting) {
+
+            entry.target.classList.add("show");
+
+            observer.unobserve(
+              entry.target
+            );
+
+          }
+
+        });
+
+      },
+      {
+        threshold: 0.12
+      }
+    );
+
+  elements.forEach(element => {
+    observer.observe(element);
+  });
+
+</script>
+
+</body>
+  </html>
