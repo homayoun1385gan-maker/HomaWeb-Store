@@ -1,1 +1,850 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>خدمات HomaWeb | طراحی سایت، ربات، تبلیغات و فروشگاه اینترنتی</title>
+
+  <meta name="description" content="خدمات حرفه‌ای HomaWeb شامل طراحی سایت، فروشگاه اینترنتی، طراحی ربات، تبلیغات دیجیتال، خدمات روبیکا و اجرای پروژه‌های اختصاصی با طراحی مدرن و پشتیبانی.">
+  <meta name="keywords" content="خدمات طراحی سایت, طراحی وب سایت, فروشگاه اینترنتی, طراحی ربات, ربات تلگرام, ربات روبیکا, تبلیغات دیجیتال, تبلیغات هدفمند, خدمات روبیکا, HomaWeb">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="HomaWeb">
+
+  <meta property="og:title" content="خدمات HomaWeb">
+  <meta property="og:description" content="طراحی سایت، فروشگاه اینترنتی، ربات، تبلیغات و خدمات دیجیتال HomaWeb">
+  <meta property="og:type" content="website">
+
+  <link rel="canonical" href="https://homayoun1385gan-maker.github.io/HomaWeb-Store/services.html">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f8f7ff;
+      color: #241b38;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.94);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid #eee8ff;
+    }
+
+    .nav {
+      max-width: 1180px;
+      margin: auto;
+      min-height: 78px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 15px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #6530d8;
+      font-size: 22px;
+      font-weight: 900;
+    }
+
+    .logo {
+      width: 50px;
+      height: 50px;
+      border-radius: 17px;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg,#6d28d9,#4c1d95);
+      box-shadow: 0 10px 25px rgba(109,40,217,.25);
+      font-size: 25px;
+    }
+
+    .home-btn {
+      background: #f0eaff;
+      color: #5d2cc4;
+      padding: 10px 18px;
+      border-radius: 15px;
+      font-weight: 800;
+      transition: .3s;
+    }
+
+    .home-btn:hover {
+      transform: translateY(-2px);
+      background: #e6dcff;
+    }
+
+    /* Hero */
+    .hero {
+      max-width: 1180px;
+      margin: 38px auto 25px;
+      padding: 0 20px;
+    }
+
+    .hero-box {
+      min-height: 390px;
+      border-radius: 34px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      isolation: isolate;
+      background: #32116d;
+      box-shadow: 0 25px 60px rgba(61,20,120,.22);
+    }
+
+    .hero-image {
+      position: absolute;
+      inset: 0;
+      z-index: -3;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      animation: imageZoom 9s ease-in-out infinite alternate;
+      filter: brightness(.55) saturate(1.1);
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: -2;
+      background:
+        linear-gradient(90deg,rgba(43,10,92,.88),rgba(82,35,170,.65),rgba(38,14,76,.35));
+    }
+
+    .hero-content {
+      width: 100%;
+      padding: 48px;
+      color: white;
+      max-width: 800px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      padding: 8px 17px;
+      border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.13);
+      backdrop-filter: blur(8px);
+      border-radius: 50px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      animation: fadeUp .8s ease both;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px,5vw,58px);
+      line-height: 1.45;
+      margin-bottom: 15px;
+      animation: fadeUp 1s ease both;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #eee8ff;
+      max-width: 720px;
+      animation: fadeUp 1.2s ease both;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 25px;
+    }
+
+    .btn {
+      padding: 12px 22px;
+      border-radius: 15px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      transition: .3s;
+      border: 1px solid transparent;
+    }
+
+    .btn-primary {
+      background: white;
+      color: #5b21b6;
+    }
+
+    .btn-outline {
+      border-color: rgba(255,255,255,.4);
+      background: rgba(255,255,255,.1);
+      color: white;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    /* Sections */
+    .section {
+      max-width: 1180px;
+      margin: 70px auto;
+      padding: 0 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .section-title span {
+      color: #7135d5;
+      font-weight: 900;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 7px;
+    }
+
+    .section-title p {
+      color: #716a80;
+    }
+
+    /* Service cards */
+    .services {
+      display: grid;
+      grid-template-columns: repeat(3,1fr);
+      gap: 22px;
+    }
+
+    .service {
+      background: white;
+      border: 1px solid #eee8fa;
+      border-radius: 25px;
+      overflow: hidden;
+      box-shadow: 0 12px 35px rgba(47,25,91,.07);
+      transition: .35s;
+    }
+
+    .service:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 22px 45px rgba(80,40,150,.14);
+    }
+
+    .service-image {
+      height: 190px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .service-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .7s ease;
+    }
+
+    .service:hover .service-image img {
+      transform: scale(1.08);
+    }
+
+    .service-body {
+      padding: 22px;
+    }
+
+    .service-body h3 {
+      color: #4c1d95;
+      font-size: 21px;
+      margin-bottom: 9px;
+    }
+
+    .service-body p {
+      color: #70687c;
+      font-size: 14px;
+      margin-bottom: 17px;
+    }
+
+    .service-price {
+      color: #5b21b6;
+      font-size: 18px;
+      font-weight: 900;
+      margin-bottom: 15px;
+    }
+
+    /* Featured banner */
+    .feature {
+      border-radius: 30px;
+      min-height: 330px;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      align-items: center;
+      color: white;
+      box-shadow: 0 20px 50px rgba(49,21,103,.2);
+    }
+
+    .feature img {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -2;
+      filter: brightness(.5);
+      animation: imageZoom 10s ease-in-out infinite alternate;
+    }
+
+    .feature:after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: -1;
+      background: linear-gradient(90deg,rgba(46,14,92,.9),rgba(83,39,150,.55));
+    }
+
+    .feature-content {
+      padding: 45px;
+      max-width: 700px;
+    }
+
+    .feature-content h2 {
+      font-size: 35px;
+      margin-bottom: 12px;
+    }
+
+    .feature-content p {
+      color: #eee8ff;
+    }
+
+    /* Process */
+    .process {
+      display: grid;
+      grid-template-columns: repeat(4,1fr);
+      gap: 18px;
+    }
+
+    .step {
+      background: white;
+      border-radius: 22px;
+      padding: 25px 18px;
+      text-align: center;
+      border: 1px solid #eee8fa;
+      box-shadow: 0 10px 30px rgba(40,20,80,.06);
+    }
+
+    .step-number {
+      width: 48px;
+      height: 48px;
+      margin: 0 auto 12px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      color: white;
+      background: linear-gradient(135deg,#7c3aed,#4c1d95);
+      font-weight: 900;
+      font-size: 18px;
+    }
+
+    .step h3 {
+      font-size: 17px;
+      margin-bottom: 6px;
+    }
+
+    .step p {
+      color: #766f82;
+      font-size: 13px;
+    }
+
+    /* CTA */
+    .cta {
+      background: linear-gradient(135deg,#5b21b6,#7c3aed);
+      color: white;
+      border-radius: 30px;
+      padding: 45px 30px;
+      text-align: center;
+      box-shadow: 0 20px 50px rgba(91,33,182,.22);
+    }
+
+    .cta h2 {
+      font-size: 32px;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      color: #eee8ff;
+      margin-bottom: 20px;
+    }
+
+    /* Floating support */
+    .support {
+      position: fixed;
+      left: 18px;
+      bottom: 18px;
+      z-index: 2000;
+      background: linear-gradient(135deg,#6d28d9,#4c1d95);
+      color: white;
+      border-radius: 50px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+      font-weight: 900;
+      box-shadow: 0 12px 30px rgba(76,29,149,.35);
+      animation: supportFloat 2.8s ease-in-out infinite;
+    }
+
+    .support-dot {
+      width: 10px;
+      height: 10px;
+      background: #55f0a0;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(85,240,160,.15);
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 70px;
+      background: #201631;
+      color: #ddd5e9;
+      padding: 40px 20px;
+      text-align: center;
+    }
+
+    footer strong {
+      color: white;
+      font-size: 21px;
+    }
+
+    footer p {
+      margin-top: 8px;
+      color: #aaa0b8;
+      font-size: 14px;
+    }
+
+    /* Animations */
+    @keyframes imageZoom {
+      from { transform: scale(1); }
+      to { transform: scale(1.08); }
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(22px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @keyframes supportFloat {
+      0%,100% { transform: translateY(0); }
+      50% { transform: translateY(-5px); }
+    }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .services {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .process {
+        grid-template-columns: repeat(2,1fr);
+      }
+
+      .hero-content {
+        padding: 35px;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 18px;
+      }
+
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .hero {
+        margin-top: 20px;
+      }
+
+      .hero-box {
+        min-height: 470px;
+        border-radius: 25px;
+      }
+
+      .hero-content {
+        padding: 28px 22px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 15px;
+      }
+
+      .services {
+        grid-template-columns: 1fr;
+      }
+
+      .process {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .feature-content {
+        padding: 30px 22px;
+      }
+
+      .feature-content h2 {
+        font-size: 28px;
+      }
+
+      .support {
+        left: 12px;
+        bottom: 12px;
+        font-size: 13px;
+        padding: 10px 14px;
+      }
+    }
+  </style>
+
+  <script type="application/ld+json">
+  {
+    "@context":"https://schema.org",
+    "@type":"ProfessionalService",
+    "name":"HomaWeb",
+    "url":"https://homayoun1385gan-maker.github.io/HomaWeb-Store/services.html",
+    "description":"خدمات طراحی سایت، فروشگاه اینترنتی، ربات، تبلیغات و خدمات دیجیتال HomaWeb",
+    "areaServed":"IR",
+    "serviceType":[
+      "طراحی سایت",
+      "طراحی فروشگاه اینترنتی",
+      "طراحی ربات",
+      "تبلیغات دیجیتال",
+      "خدمات روبیکا"
+    ]
+  }
+  </script>
+</head>
+
+<body>
+
+<header>
+  <nav class="nav" aria-label="منوی اصلی">
+    <a class="brand" href="index.html">
+      <span class="logo">H</span>
+      <span>HomaWeb Store</span>
+    </a>
+
+    <a class="home-btn" href="index.html">← صفحه اصلی</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-box">
+
+      <img
+        class="hero-image"
+        src="https://images.unsplash.com/photo-1558655146-9f40138edfeb?auto=format&fit=crop&w=1800&q=85"
+        alt="طراحی حرفه‌ای خدمات دیجیتال و وب سایت HomaWeb"
+      >
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+        <div class="eyebrow">✨ خدمات حرفه‌ای HomaWeb</div>
+
+        <h1>راهکارهای دیجیتال برای رشد کسب‌وکار شما</h1>
+
+        <p>
+          از طراحی سایت و فروشگاه اینترنتی تا ساخت ربات، تبلیغات دیجیتال
+          و خدمات اختصاصی؛ همه‌چیز با طراحی مدرن، اجرای حرفه‌ای و پشتیبانی.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="#services" class="btn btn-primary">مشاهده خدمات</a>
+          <a href="#order" class="btn btn-outline">سفارش و مشاوره</a>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Services -->
+  <section class="section" id="services">
+
+    <div class="section-title">
+      <span>HomaWeb Services</span>
+      <h2>خدمات ما</h2>
+      <p>خدمات کاربردی برای راه‌اندازی و توسعه کسب‌وکار آنلاین</p>
+    </div>
+
+    <div class="services">
+
+      <article class="service">
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1547658719-da2b51169166?auto=format&fit=crop&w=1000&q=85"
+            alt="طراحی وب سایت حرفه‌ای"
+            loading="lazy"
+          >
+        </div>
+        <div class="service-body">
+          <h3>🌐 طراحی سایت</h3>
+          <p>
+            طراحی سایت شرکتی، شخصی و حرفه‌ای با ظاهر مدرن،
+            ساختار مناسب موبایل، سرعت مناسب و قابلیت توسعه.
+          </p>
+          <div class="service-price">از ۱۰ میلیون تومان</div>
+          <a href="web-design.html" class="btn btn-primary">مشاهده طراحی سایت</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1000&q=85"
+            alt="طراحی فروشگاه اینترنتی"
+            loading="lazy"
+          >
+        </div>
+        <div class="service-body">
+          <h3>🛒 فروشگاه اینترنتی</h3>
+          <p>
+            ساخت فروشگاه آنلاین حرفه‌ای برای معرفی محصولات،
+            دریافت سفارش و توسعه کسب‌وکار اینترنتی.
+          </p>
+          <div class="service-price">از ۲۱ میلیون تومان</div>
+          <a href="web-design.html" class="btn btn-primary">مشاهده جزئیات</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=1000&q=85"
+            alt="داشبورد و ربات هوشمند"
+            loading="lazy"
+          >
+        </div>
+        <div class="service-body">
+          <h3>🤖 طراحی ربات</h3>
+          <p>
+            طراحی ربات‌های ساده تا حرفه‌ای برای اتوماسیون،
+            پاسخ‌گویی، مدیریت سفارش و خدمات کسب‌وکار.
+          </p>
+          <div class="service-price">۲ تا ۶ میلیون تومان</div>
+          <a href="bots.html" class="btn btn-primary">مشاهده ربات‌ها</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1557838923-2985c318be48?auto=format&fit=crop&w=1000&q=85"
+            alt="تبلیغات دیجیتال و بازاریابی"
+            loading="lazy"
+          >
+        </div>
+        <div class="service-body">
+          <h3>📢 تبلیغات دیجیتال</h3>
+          <p>
+            تبلیغات هدفمند برای معرفی خدمات، محصولات و کانال‌های
+            شما در فضای دیجیتال.
+          </p>
+          <div class="service-price">قیمت بر اساس کمپین</div>
+          <a href="ads.html" class="btn btn-primary">مشاهده تبلیغات</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1611162617474-5b21e879e113?auto=format&fit=crop&w=1000&q=85"
+            alt="مدیریت شبکه‌های اجتماعی و روبیکا"
+            loading="lazy"
+          >
+        </div>
+        <div class="service-body">
+          <h3>📱 خدمات شبکه اجتماعی</h3>
+          <p>
+            طراحی و آماده‌سازی صفحات و تبلیغات برای شبکه‌های اجتماعی
+            و افزایش حضور آنلاین برند.
+          </p>
+          <div class="service-price">مشاوره و سفارش</div>
+          <a href="contact.html" class="btn btn-primary">درخواست مشاوره</a>
+        </div>
+      </article>
+
+      <article class="service">
+        <div class="service-image">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=1000&q=85"
+            alt="پروژه اختصاصی و توسعه نرم افزار"
+            loading="lazy"
+          >
+        </div>
+        <div class="service-body">
+          <h3>⚙️ پروژه اختصاصی</h3>
+          <p>
+            اگر نیاز شما در پکیج‌های آماده نیست، پروژه اختصاصی
+            متناسب با نیاز کسب‌وکار شما طراحی و اجرا می‌شود.
+          </p>
+          <div class="service-price">قیمت پس از بررسی پروژه</div>
+          <a href="contact.html" class="btn btn-primary">ثبت درخواست</a>
+        </div>
+      </article>
+
+    </div>
+  </section>
+
+  <!-- Real Image Feature -->
+  <section class="section">
+
+    <div class="feature">
+
+      <img
+        src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?auto=format&fit=crop&w=1800&q=85"
+        alt="نمونه واقعی داشبورد کسب‌وکار دیجیتال"
+        loading="lazy"
+      >
+
+      <div class="feature-content">
+        <h2>یک ایده، یک اجرای حرفه‌ای 🚀</h2>
+
+        <p>
+          قبل از شروع پروژه، نیازهای شما بررسی می‌شود و بر اساس بودجه،
+          نوع کسب‌وکار و امکانات موردنیاز، بهترین مسیر اجرا پیشنهاد خواهد شد.
+        </p>
+
+        <div class="hero-buttons">
+          <a href="portfolio.html" class="btn btn-primary">مشاهده نمونه‌کارها</a>
+          <a href="#order" class="btn btn-outline">شروع پروژه</a>
+        </div>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- Process -->
+  <section class="section">
+
+    <div class="section-title">
+      <span>How We Work</span>
+      <h2>مراحل اجرای پروژه</h2>
+      <p>فرآیند ساده و شفاف از ایده تا تحویل</p>
+    </div>
+
+    <div class="process">
+
+      <div class="step">
+        <div class="step-number">۱</div>
+        <h3>مشاوره</h3>
+        <p>نیازهای پروژه و امکانات موردنظر شما بررسی می‌شود.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">۲</div>
+        <h3>طراحی</h3>
+        <p>ساختار و ظاهر پروژه متناسب با برند شما طراحی می‌شود.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">۳</div>
+        <h3>توسعه</h3>
+        <p>پروژه با امکانات توافق‌شده پیاده‌سازی و تست می‌شود.</p>
+      </div>
+
+      <div class="step">
+        <div class="step-number">۴</div>
+        <h3>تحویل و پشتیبانی</h3>
+        <p>پس از تحویل، راهنمایی و پشتیبانی لازم ارائه می‌شود.</p>
+      </div>
+
+    </div>
+
+  </section>
+
+  <!-- CTA -->
+  <section class="section" id="order">
+
+    <div class="cta">
+      <h2>پروژه‌تان را شروع کنیم؟</h2>
+
+      <p>
+        برای دریافت قیمت دقیق و بررسی نیاز پروژه، با پشتیبانی HomaWeb در ارتباط باشید.
+      </p>
+
+      <a
+        href="https://rubika.ir/Tabligh_chat"
+        class="btn btn-primary"
+        target="_blank"
+        rel="noopener"
+      >
+        💬 سفارش و پشتیبانی روبیکا
+      </a>
+
+      <p style="margin-top:15px;margin-bottom:0;">
+        پشتیبانی روبیکا: ۰۹۹۱۶۵۸۹۲۰۸
+      </p>
+    </div>
+
+  </section>
+
+</main>
+
+<!-- Floating Support -->
+<a
+  class="support"
+  href="https://rubika.ir/Tabligh_chat"
+  target="_blank"
+  rel="noopener"
+  aria-label="ارتباط با پشتیبانی HomaWeb در روبیکا"
+>
+  <span class="support-dot"></span>
+  💬 پشتیبانی
+</a>
+
+<footer>
+  <strong>HomaWeb Store</strong>
+  <p>
+    طراحی سایت، ربات، تبلیغات و خدمات دیجیتال حرفه‌ای
+  </p>
+  <p>
+    © 2026 HomaWeb — تمامی حقوق محفوظ است.
+  </p>
+</footer>
+
+</body>
+  </html>
