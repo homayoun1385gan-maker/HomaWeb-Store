@@ -1,1 +1,1425 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
 
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>طراحی و ساخت ربات اختصاصی | HomaWeb Store</title>
+
+  <meta name="description"
+        content="طراحی و ساخت ربات اختصاصی برای کسب‌وکارها، فروشگاه‌ها، پشتیبانی، تبلیغات و مدیریت مشتری. ربات‌های حرفه‌ای با قیمت ۲ تا ۶ میلیون تومان توسط HomaWeb.">
+  <meta name="keywords"
+        content="طراحی ربات, ساخت ربات, ربات اختصاصی, ربات فروشگاهی, ربات پشتیبانی, ربات تبلیغاتی, ربات کسب و کار, HomaWeb, ربات روبیکا, ربات تلگرام">
+  <meta name="robots" content="index, follow">
+  <meta name="author" content="HomaWeb">
+
+  <meta property="og:title" content="طراحی و ساخت ربات اختصاصی | HomaWeb">
+  <meta property="og:description"
+        content="ساخت ربات‌های اختصاصی برای کسب‌وکار، فروشگاه، پشتیبانی و مدیریت مشتری.">
+  <meta property="og:type" content="website">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family:
+        Tahoma,
+        Arial,
+        sans-serif;
+      background:
+        linear-gradient(180deg, #f9f7ff 0%, #ffffff 45%, #f8f5ff 100%);
+      color: #241a35;
+      line-height: 1.9;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button {
+      font-family: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    /* HEADER */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(113,56,232,.08);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-size: 21px;
+      font-weight: 900;
+      color: #7138e8;
+    }
+
+    .logo {
+      width: 46px;
+      height: 46px;
+      border-radius: 15px;
+      display: grid;
+      place-items: center;
+      color: white;
+      font-size: 23px;
+      font-weight: 900;
+      background:
+        linear-gradient(135deg, #7138e8, #4b1db5);
+      box-shadow: 0 9px 25px rgba(113,56,232,.25);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .logo::after {
+      content: "";
+      position: absolute;
+      width: 80px;
+      height: 15px;
+      background: rgba(255,255,255,.22);
+      transform: rotate(-35deg);
+      animation: shine 3s infinite;
+    }
+
+    @keyframes shine {
+      0% {
+        transform: translateX(-80px) rotate(-35deg);
+      }
+      45%,100% {
+        transform: translateX(100px) rotate(-35deg);
+      }
+    }
+
+    .back-btn {
+      padding: 10px 17px;
+      border-radius: 13px;
+      background: #f0eaff;
+      color: #6330d0;
+      font-weight: 800;
+      transition: .25s;
+    }
+
+    .back-btn:hover {
+      transform: translateY(-2px);
+      background: #e6dbff;
+    }
+
+    /* HERO */
+
+    .hero {
+      margin-top: 28px;
+      border-radius: 30px;
+      padding: 45px 30px;
+      min-height: 380px;
+      position: relative;
+      overflow: hidden;
+      color: white;
+      background:
+        radial-gradient(circle at 12% 90%, rgba(255,255,255,.15) 0 130px, transparent 132px),
+        radial-gradient(circle at 95% 10%, rgba(255,255,255,.12) 0 100px, transparent 102px),
+        linear-gradient(135deg, #7138e8, #4920b5);
+      box-shadow: 0 25px 60px rgba(78,35,178,.22);
+    }
+
+    .hero-content {
+      max-width: 720px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .badge {
+      display: inline-flex;
+      padding: 8px 15px;
+      border-radius: 999px;
+      background: rgba(255,255,255,.14);
+      border: 1px solid rgba(255,255,255,.22);
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 17px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 6vw, 57px);
+      line-height: 1.35;
+      margin-bottom: 14px;
+      font-weight: 950;
+    }
+
+    .hero h1 span {
+      color: #f1eaff;
+    }
+
+    .hero p {
+      font-size: 17px;
+      color: rgba(255,255,255,.9);
+      max-width: 680px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 27px;
+    }
+
+    .btn {
+      border: 0;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      min-height: 48px;
+      padding: 11px 22px;
+      border-radius: 15px;
+      font-weight: 900;
+      transition: .25s;
+    }
+
+    .btn:hover {
+      transform: translateY(-3px);
+    }
+
+    .btn-white {
+      background: white;
+      color: #6630d5;
+      box-shadow: 0 12px 25px rgba(0,0,0,.12);
+    }
+
+    .btn-outline {
+      color: white;
+      border: 1px solid rgba(255,255,255,.3);
+      background: rgba(255,255,255,.08);
+    }
+
+    /* ROBOT ANIMATION */
+
+    .robot {
+      position: absolute;
+      left: 7%;
+      bottom: 35px;
+      width: 150px;
+      height: 180px;
+      animation: floatRobot 3.2s ease-in-out infinite;
+      opacity: .98;
+    }
+
+    @keyframes floatRobot {
+      0%,100% {
+        transform: translateY(0) rotate(-2deg);
+      }
+      50% {
+        transform: translateY(-14px) rotate(2deg);
+      }
+    }
+
+    .robot-head {
+      width: 110px;
+      height: 85px;
+      margin: auto;
+      border-radius: 25px;
+      background: #fff;
+      border: 5px solid #dfd4ff;
+      position: relative;
+      box-shadow: 0 15px 35px rgba(0,0,0,.18);
+    }
+
+    .robot-eye {
+      position: absolute;
+      top: 28px;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: #7138e8;
+      box-shadow: 0 0 12px rgba(113,56,232,.5);
+    }
+
+    .robot-eye.one {
+      right: 25px;
+    }
+
+    .robot-eye.two {
+      left: 25px;
+    }
+
+    .robot-mouth {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      bottom: 15px;
+      width: 43px;
+      height: 9px;
+      border-radius: 20px;
+      background: #7138e8;
+    }
+
+    .robot-body {
+      width: 88px;
+      height: 72px;
+      margin: 10px auto;
+      border-radius: 20px;
+      background: #e9e1ff;
+      border: 4px solid #cdbaff;
+      position: relative;
+    }
+
+    .robot-body::before,
+    .robot-body::after {
+      content: "";
+      position: absolute;
+      top: 20px;
+      width: 18px;
+      height: 7px;
+      border-radius: 20px;
+      background: #7138e8;
+    }
+
+    .robot-body::before {
+      right: -28px;
+      transform: rotate(35deg);
+    }
+
+    .robot-body::after {
+      left: -28px;
+      transform: rotate(-35deg);
+    }
+
+    /* SECTION */
+
+    section {
+      padding: 70px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 38px;
+    }
+
+    .section-title h2 {
+      font-size: 32px;
+      margin-bottom: 8px;
+      font-weight: 950;
+    }
+
+    .section-title p {
+      color: #77727f;
+      font-size: 15px;
+    }
+
+    /* PACKAGES */
+
+    .packages {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+    }
+
+    .package {
+      background: white;
+      border: 1px solid #eee8f8;
+      border-radius: 25px;
+      padding: 25px;
+      position: relative;
+      overflow: hidden;
+      transition: .3s;
+      box-shadow: 0 10px 35px rgba(40,20,80,.06);
+    }
+
+    .package:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 45px rgba(74,35,150,.13);
+    }
+
+    .package.featured {
+      border: 2px solid #7138e8;
+      transform: translateY(-8px);
+    }
+
+    .package.featured:hover {
+      transform: translateY(-14px);
+    }
+
+    .popular {
+      position: absolute;
+      top: 16px;
+      left: 16px;
+      background: #7138e8;
+      color: white;
+      border-radius: 999px;
+      padding: 4px 10px;
+      font-size: 11px;
+      font-weight: 900;
+    }
+
+    .package-icon {
+      width: 60px;
+      height: 60px;
+      display: grid;
+      place-items: center;
+      background: #f0eaff;
+      border-radius: 18px;
+      font-size: 28px;
+      margin-bottom: 18px;
+    }
+
+    .package h3 {
+      font-size: 20px;
+      margin-bottom: 7px;
+    }
+
+    .package .desc {
+      color: #77727f;
+      font-size: 13px;
+      min-height: 52px;
+    }
+
+    .price {
+      margin: 19px 0;
+      color: #7138e8;
+      font-size: 25px;
+      font-weight: 950;
+    }
+
+    .price small {
+      font-size: 12px;
+      color: #77727f;
+      font-weight: normal;
+    }
+
+    .features {
+      list-style: none;
+      margin: 17px 0;
+    }
+
+    .features li {
+      padding: 6px 0;
+      color: #4e4858;
+      font-size: 13px;
+    }
+
+    .features li::before {
+      content: "✓";
+      color: #7138e8;
+      font-weight: 900;
+      margin-left: 7px;
+    }
+
+    .package .btn {
+      width: 100%;
+      background: #7138e8;
+      color: white;
+    }
+
+    /* TYPES */
+
+    .types {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .type-card {
+      background: white;
+      border-radius: 23px;
+      padding: 25px;
+      border: 1px solid #eee8f8;
+      transition: .3s;
+    }
+
+    .type-card:hover {
+      transform: translateY(-6px);
+      border-color: #d9c9ff;
+    }
+
+    .type-icon {
+      font-size: 35px;
+      margin-bottom: 10px;
+    }
+
+    .type-card h3 {
+      font-size: 19px;
+      margin-bottom: 7px;
+    }
+
+    .type-card p {
+      color: #77727f;
+      font-size: 13px;
+    }
+
+    /* DEMO */
+
+    .demo {
+      background: #241a35;
+      border-radius: 30px;
+      color: white;
+      padding: 38px 25px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .demo::before {
+      content: "";
+      position: absolute;
+      width: 300px;
+      height: 300px;
+      border-radius: 50%;
+      background: rgba(113,56,232,.3);
+      top: -160px;
+      left: -100px;
+    }
+
+    .demo-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+    }
+
+    .demo-screen {
+      margin: 25px auto 0;
+      max-width: 700px;
+      background: #fff;
+      color: #241a35;
+      border-radius: 20px;
+      padding: 23px;
+      text-align: right;
+      box-shadow: 0 20px 50px rgba(0,0,0,.25);
+    }
+
+    .chat {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .message {
+      max-width: 80%;
+      padding: 10px 14px;
+      border-radius: 15px;
+      background: #f0eaff;
+      font-size: 13px;
+    }
+
+    .message.user {
+      align-self: flex-start;
+      background: #7138e8;
+      color: white;
+    }
+
+    /* SEO CONTENT */
+
+    .seo-box {
+      background: white;
+      border-radius: 25px;
+      padding: 30px;
+      border: 1px solid #eee8f8;
+      box-shadow: 0 10px 35px rgba(40,20,80,.05);
+    }
+
+    .seo-box h2 {
+      font-size: 25px;
+      margin-bottom: 15px;
+    }
+
+    .seo-box h3 {
+      font-size: 18px;
+      margin: 20px 0 7px;
+      color: #6330d0;
+    }
+
+    .seo-box p {
+      color: #625d69;
+      font-size: 14px;
+    }
+
+    /* FAQ */
+
+    .faq {
+      max-width: 850px;
+      margin: auto;
+      display: grid;
+      gap: 12px;
+    }
+
+    details {
+      background: white;
+      border: 1px solid #eee8f8;
+      border-radius: 17px;
+      padding: 16px 19px;
+    }
+
+    summary {
+      cursor: pointer;
+      font-weight: 900;
+      color: #342b42;
+    }
+
+    details p {
+      padding-top: 12px;
+      color: #77727f;
+      font-size: 13px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      text-align: center;
+      background:
+        linear-gradient(135deg, #7138e8, #4c21b5);
+      color: white;
+      border-radius: 30px;
+      padding: 45px 25px;
+      box-shadow: 0 20px 50px rgba(82,36,182,.2);
+    }
+
+    .contact h2 {
+      font-size: 30px;
+      margin-bottom: 9px;
+    }
+
+    .contact p {
+      color: rgba(255,255,255,.86);
+      font-size: 14px;
+    }
+
+    .contact-buttons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 23px;
+    }
+
+    /* SUPPORT */
+
+    .support {
+      position: fixed;
+      left: 18px;
+      bottom: 20px;
+      z-index: 2000;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background: #7138e8;
+      color: white;
+      padding: 12px 16px;
+      border-radius: 999px;
+      box-shadow: 0 12px 30px rgba(80,35,180,.35);
+      font-weight: 900;
+      animation: supportFloat 2.5s ease-in-out infinite;
+    }
+
+    @keyframes supportFloat {
+      0%,100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-6px);
+      }
+    }
+
+    .support-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #9cffc6;
+      box-shadow: 0 0 10px #9cffc6;
+    }
+
+    /* FOOTER */
+
+    footer {
+      padding: 35px 0;
+      text-align: center;
+      color: #77727f;
+      font-size: 12px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 950px) {
+      .packages {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .types {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .robot {
+        opacity: .3;
+        left: 2%;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .nav {
+        min-height: 68px;
+      }
+
+      .brand {
+        font-size: 17px;
+      }
+
+      .logo {
+        width: 40px;
+        height: 40px;
+        border-radius: 13px;
+      }
+
+      .hero {
+        min-height: 390px;
+        padding: 32px 20px;
+        border-radius: 25px;
+      }
+
+      .hero h1 {
+        font-size: 34px;
+      }
+
+      .hero p {
+        font-size: 14px;
+      }
+
+      .robot {
+        width: 105px;
+        transform: scale(.75);
+        left: -5px;
+        bottom: 5px;
+      }
+
+      .packages,
+      .types {
+        grid-template-columns: 1fr;
+      }
+
+      .package.featured {
+        transform: none;
+      }
+
+      section {
+        padding: 48px 0;
+      }
+
+      .support {
+        left: 12px;
+        bottom: 13px;
+        padding: 10px 13px;
+        font-size: 12px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+
+    <a href="index.html" class="brand">
+      <span class="logo">H</span>
+      <span>HomaWeb Store</span>
+    </a>
+
+    <a href="index.html" class="back-btn">
+      ← صفحه اصلی
+    </a>
+
+  </div>
+</header>
+
+
+<main>
+
+  <!-- HERO -->
+
+  <section class="container">
+
+    <div class="hero">
+
+      <div class="hero-content">
+
+        <div class="badge">
+          🤖 خدمات تخصصی طراحی ربات
+        </div>
+
+        <h1>
+          ربات اختصاصی برای
+          <span>کسب‌وکار شما</span>
+        </h1>
+
+        <p>
+          از ربات‌های ساده تا ربات‌های حرفه‌ای و چندمنظوره؛
+          طراحی و ساخت ربات متناسب با نیاز کسب‌وکار شما،
+          با امکانات قابل توسعه و ظاهر حرفه‌ای.
+        </p>
+
+        <div class="hero-buttons">
+
+          <a href="#packages" class="btn btn-white">
+            مشاهده پکیج‌ها
+          </a>
+
+          <a href="https://rubika.ir/Tabligh_chat"
+             target="_blank"
+             class="btn btn-outline">
+            💬 مشاوره و سفارش
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <!-- ROBOT -->
+
+      <div class="robot">
+
+        <div class="robot-head">
+
+          <span class="robot-eye one"></span>
+          <span class="robot-eye two"></span>
+
+          <span class="robot-mouth"></span>
+
+        </div>
+
+        <div class="robot-body"></div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- PACKAGES -->
+
+  <section id="packages">
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>پکیج‌های طراحی ربات</h2>
+
+        <p>
+          از شروع اقتصادی تا ربات حرفه‌ای و اختصاصی
+        </p>
+
+      </div>
+
+
+      <div class="packages">
+
+
+        <!-- 2M -->
+
+        <article class="package">
+
+          <div class="package-icon">⚙️</div>
+
+          <h3>ربات پایه</h3>
+
+          <p class="desc">
+            مناسب کارهای ساده، پاسخگویی و اتوماسیون اولیه.
+          </p>
+
+          <div class="price">
+            ۲ میلیون
+            <small>تومان</small>
+          </div>
+
+          <ul class="features">
+
+            <li>منوی اختصاصی</li>
+            <li>پاسخ‌های خودکار</li>
+            <li>دکمه‌های کاربردی</li>
+            <li>طراحی اختصاصی اولیه</li>
+            <li>قابل توسعه در آینده</li>
+
+          </ul>
+
+          <a href="https://rubika.ir/Tabligh_chat"
+             target="_blank"
+             class="btn">
+            سفارش ربات
+          </a>
+
+        </article>
+
+
+        <!-- 3M -->
+
+        <article class="package">
+
+          <div class="package-icon">🤖</div>
+
+          <h3>ربات کسب‌وکار</h3>
+
+          <p class="desc">
+            مناسب کسب‌وکارهایی که به مدیریت و پاسخگویی خودکار نیاز دارند.
+          </p>
+
+          <div class="price">
+            ۳ میلیون
+            <small>تومان</small>
+          </div>
+
+          <ul class="features">
+
+            <li>منوی چندمرحله‌ای</li>
+            <li>پاسخگویی هوشمند</li>
+            <li>فرم دریافت اطلاعات</li>
+            <li>مدیریت درخواست‌ها</li>
+            <li>طراحی اختصاصی</li>
+
+          </ul>
+
+          <a href="https://rubika.ir/Tabligh_chat"
+             target="_blank"
+             class="btn">
+            سفارش ربات
+          </a>
+
+        </article>
+
+
+        <!-- 4M -->
+
+        <article class="package featured">
+
+          <span class="popular">
+            محبوب‌ترین
+          </span>
+
+          <div class="package-icon">🚀</div>
+
+          <h3>ربات حرفه‌ای</h3>
+
+          <p class="desc">
+            برای فروشگاه‌ها، خدمات آنلاین و مدیریت حرفه‌ای مشتریان.
+          </p>
+
+          <div class="price">
+            ۴ میلیون
+            <small>تومان</small>
+          </div>
+
+          <ul class="features">
+
+            <li>سیستم منوی حرفه‌ای</li>
+            <li>فرم سفارش</li>
+            <li>ثبت اطلاعات مشتری</li>
+            <li>مدیریت خدمات</li>
+            <li>ساختار قابل توسعه</li>
+            <li>طراحی UI اختصاصی</li>
+
+          </ul>
+
+          <a href="https://rubika.ir/Tabligh_chat"
+             target="_blank"
+             class="btn">
+            سفارش ربات
+          </a>
+
+        </article>
+
+
+        <!-- 6M -->
+
+        <article class="package">
+
+          <div class="package-icon">🧠</div>
+
+          <h3>ربات پیشرفته</h3>
+
+          <p class="desc">
+            راهکار کامل برای پروژه‌های بزرگ‌تر و ربات‌های چندمنظوره.
+          </p>
+
+          <div class="price">
+            ۶ میلیون
+            <small>تومان</small>
+          </div>
+
+          <ul class="features">
+
+            <li>ساختار چندبخشی</li>
+            <li>سیستم مدیریت درخواست</li>
+            <li>فرم‌های پیشرفته</li>
+            <li>مدیریت کاربران</li>
+            <li>قابلیت توسعه اختصاصی</li>
+            <li>طراحی حرفه‌ای</li>
+
+          </ul>
+
+          <a href="https://rubika.ir/Tabligh_chat"
+             target="_blank"
+             class="btn">
+            سفارش ربات
+          </a>
+
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- TYPES -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>چه نوع رباتی می‌خواهید؟</h2>
+
+        <p>
+          ساختار ربات بر اساس نیاز واقعی کسب‌وکار شما طراحی می‌شود.
+        </p>
+
+      </div>
+
+
+      <div class="types">
+
+        <article class="type-card">
+          <div class="type-icon">🛒</div>
+          <h3>ربات فروشگاهی</h3>
+          <p>
+            معرفی محصولات، دریافت سفارش، نمایش قیمت،
+            ثبت اطلاعات مشتری و هدایت مشتری به پشتیبانی.
+          </p>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">💬</div>
+          <h3>ربات پشتیبانی</h3>
+          <p>
+            پاسخگویی خودکار، دسته‌بندی درخواست‌ها،
+            دریافت مشخصات مشتری و ارسال درخواست به پشتیبانی.
+          </p>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">📢</div>
+          <h3>ربات تبلیغاتی</h3>
+          <p>
+            معرفی خدمات، کمپین‌های تبلیغاتی،
+            دریافت اطلاعات مخاطب و هدایت به کانال یا پشتیبانی.
+          </p>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">📋</div>
+          <h3>ربات ثبت سفارش</h3>
+          <p>
+            دریافت مرحله‌به‌مرحله اطلاعات سفارش
+            و آماده‌سازی درخواست برای بررسی توسط شما.
+          </p>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">👥</div>
+          <h3>ربات مدیریت مشتری</h3>
+          <p>
+            دریافت اطلاعات کاربران، دسته‌بندی درخواست‌ها
+            و طراحی فرآیند مناسب برای ارتباط با مشتری.
+          </p>
+        </article>
+
+        <article class="type-card">
+          <div class="type-icon">⚡</div>
+          <h3>ربات اختصاصی</h3>
+          <p>
+            اگر ایده خاصی دارید، ساختار ربات از ابتدا
+            بر اساس نیاز پروژه شما طراحی می‌شود.
+          </p>
+        </article>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- DEMO -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="demo">
+
+        <div class="demo-content">
+
+          <div class="badge">
+            نمونه عملکرد ربات
+          </div>
+
+          <h2>
+            یک ربات خوب فقط پاسخ نمی‌دهد؛
+            مسیر مشتری را هدایت می‌کند.
+          </h2>
+
+          <p style="margin-top:10px;color:#d7d0e2;">
+            نمونه‌ای از یک گفت‌وگوی ساده بین مشتری و ربات
+          </p>
+
+
+          <div class="demo-screen">
+
+            <div class="chat">
+
+              <div class="message">
+                👋 سلام! به HomaWeb خوش آمدید.
+                چه خدمتی نیاز دارید؟
+              </div>
+
+              <div class="message user">
+                می‌خواهم یک سایت فروشگاهی داشته باشم.
+              </div>
+
+              <div class="message">
+                عالیه! لطفاً یکی از گزینه‌های زیر را انتخاب کنید:
+                <br><br>
+                🛒 سایت فروشگاهی
+                <br>
+                💻 سایت اختصاصی
+                <br>
+                📱 اپلیکیشن
+              </div>
+
+              <div class="message user">
+                🛒 سایت فروشگاهی
+              </div>
+
+              <div class="message">
+                درخواست شما ثبت شد.
+                برای دریافت مشاوره و قیمت دقیق با پشتیبانی در ارتباط باشید.
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- SEO -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="seo-box">
+
+        <h2>
+          طراحی و ساخت ربات اختصاصی برای کسب‌وکار
+        </h2>
+
+        <p>
+          ربات اختصاصی می‌تواند بخش زیادی از فرآیند ارتباط با مشتری
+          را ساده‌تر و سریع‌تر کند. در HomaWeb، ساختار ربات بر اساس
+          نوع کسب‌وکار، هدف پروژه، تعداد مراحل، امکانات مورد نیاز
+          و تجربه کاربری موردنظر طراحی می‌شود.
+        </p>
+
+        <h3>
+          ربات فروشگاهی چه کاربردی دارد؟
+        </h3>
+
+        <p>
+          ربات فروشگاهی می‌تواند محصولات و خدمات را معرفی کند،
+          اطلاعات مشتری را دریافت کند، سفارش را مرحله‌به‌مرحله
+          ثبت کند و مشتری را برای تکمیل فرآیند به پشتیبانی هدایت کند.
+        </p>
+
+        <h3>
+          قیمت طراحی ربات چقدر است؟
+        </h3>
+
+        <p>
+          قیمت پکیج‌های این صفحه از ۲ میلیون تومان شروع می‌شود
+          و تا ۶ میلیون تومان برای ربات‌های پیشرفته ادامه دارد.
+          قیمت نهایی پروژه‌های کاملاً سفارشی پس از بررسی امکانات
+          مورد نیاز مشخص می‌شود.
+        </p>
+
+        <h3>
+          طراحی ربات اختصاصی چه تفاوتی دارد؟
+        </h3>
+
+        <p>
+          در پروژه اختصاصی، ربات دقیقاً بر اساس فرآیند کسب‌وکار
+          طراحی می‌شود؛ بنابراین می‌توان منوها، مراحل دریافت اطلاعات،
+          فرم‌ها، پیام‌ها و مسیر ارتباط با مشتری را متناسب با پروژه
+          تنظیم کرد.
+        </p>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- FAQ -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="section-title">
+
+        <h2>سؤالات متداول</h2>
+
+        <p>
+          قبل از سفارش، پاسخ سؤالات مهم را ببینید.
+        </p>
+
+      </div>
+
+
+      <div class="faq">
+
+        <details>
+          <summary>
+            آیا ربات کاملاً اختصاصی طراحی می‌شود؟
+          </summary>
+          <p>
+            بله. ساختار منو، پیام‌ها، مراحل دریافت اطلاعات
+            و امکانات ربات می‌تواند بر اساس نیاز پروژه شما طراحی شود.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            ارزان‌ترین پکیج ربات چقدر است؟
+          </summary>
+          <p>
+            پکیج پایه از ۲ میلیون تومان شروع می‌شود.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            ربات حرفه‌ای چه امکاناتی دارد؟
+          </summary>
+          <p>
+            ربات حرفه‌ای می‌تواند شامل منوهای چندمرحله‌ای،
+            فرم سفارش، دریافت اطلاعات مشتری، مدیریت درخواست‌ها
+            و ساختار قابل توسعه باشد.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            آیا قبل از سفارش می‌توانم درباره ایده ربات مشاوره بگیرم؟
+          </summary>
+          <p>
+            بله. برای بررسی ایده و انتخاب پکیج مناسب می‌توانید
+            از طریق پشتیبانی روبیکا با ما در ارتباط باشید.
+          </p>
+        </details>
+
+        <details>
+          <summary>
+            چطور سفارش خودم را ثبت کنم؟
+          </summary>
+          <p>
+            روی دکمه سفارش هر پکیج بزنید تا وارد پشتیبانی شوید
+            و جزئیات پروژه خود را ارسال کنید.
+          </p>
+        </details>
+
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- CONTACT -->
+
+  <section>
+
+    <div class="container">
+
+      <div class="contact">
+
+        <h2>
+          ایده رباتت رو داری؟
+        </h2>
+
+        <p>
+          جزئیات ایده خودت را بفرست تا مناسب‌ترین ساختار
+          و پکیج را بهت پیشنهاد بدهیم.
+        </p>
+
+        <div class="contact-buttons">
+
+          <a href="https://rubika.ir/Tabligh_chat"
+             target="_blank"
+             class="btn btn-white">
+            💬 پشتیبانی روبیکا
+          </a>
+
+          <a href="https://t.me/AfghanDigitalRate"
+             target="_blank"
+             class="btn btn-outline">
+            ✈️ تلگرام
+          </a>
+
+          <a href="tel:09917163319"
+             class="btn btn-outline">
+            📞 تماس / واتساپ
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
+</main>
+
+
+<!-- FLOATING SUPPORT -->
+
+<a class="support"
+   href="https://rubika.ir/Tabligh_chat"
+   target="_blank"
+   aria-label="پشتیبانی HomaWeb در روبیکا">
+
+  <span class="support-dot"></span>
+
+  💬 پشتیبانی
+
+</a>
+
+
+<footer>
+
+  <div class="container">
+
+    <p>
+      © HomaWeb Store — طراحی و توسعه خدمات دیجیتال
+    </p>
+
+    <p style="margin-top:5px;">
+      طراحی ربات اختصاصی، سایت، اپلیکیشن و خدمات دیجیتال
+    </p>
+
+  </div>
+
+</footer>
+
+
+<script>
+  // حرکت نرم برای لینک‌های داخلی
+  document.querySelectorAll('a[href^="#"]').forEach(link => {
+
+    link.addEventListener("click", function(e) {
+
+      const target = document.querySelector(this.getAttribute("href"));
+
+      if (target) {
+        e.preventDefault();
+
+        target.scrollIntoView({
+          behavior: "smooth",
+          block: "start"
+        });
+      }
+
+    });
+
+  });
+
+
+  // انیمیشن ورود کارت‌ها هنگام اسکرول
+  const cards = document.querySelectorAll(
+    ".package, .type-card, .seo-box, details"
+  );
+
+  const observer = new IntersectionObserver(
+    entries => {
+
+      entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+
+          entry.target.style.opacity = "1";
+          entry.target.style.transform =
+            "translateY(0)";
+
+          observer.unobserve(entry.target);
+
+        }
+
+      });
+
+    },
+    {
+      threshold: 0.12
+    }
+  );
+
+
+  cards.forEach(card => {
+
+    card.style.opacity = "0";
+    card.style.transform = "translateY(22px)";
+    card.style.transition =
+      "opacity .7s ease, transform .7s ease";
+
+    observer.observe(card);
+
+  });
+</script>
+
+</body>
+  </html>
