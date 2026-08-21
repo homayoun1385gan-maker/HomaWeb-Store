@@ -2637,22 +2637,43 @@
 
     var cart = [];
 
-    function addToCart(name, icon, price) {
+    function addToCart(name, icon, price, description = "") {
 
-      cart.push({
-        name: name,
-        icon: icon,
-        price: Number(price) || 0
-      });
+  let cart = JSON.parse(
+    localStorage.getItem("homweb_cart") || "[]"
+  );
 
-      updateCartCount();
+  price = Number(price) || 0;
 
-      showToast(
-        "«" + name + "» با قیمت " +
-        formatPrice(price) +
-        " تومان به سبد سفارش اضافه شد."
-      );
-    }
+  const existing = cart.find(
+    item => item.name === name
+  );
+
+  if (existing) {
+
+    existing.quantity =
+      Number(existing.quantity || 1) + 1;
+
+  } else {
+
+    cart.push({
+      name: name,
+      icon: icon,
+      price: price,
+      quantity: 1,
+      description: description
+    });
+
+  }
+
+  localStorage.setItem(
+    "homweb_cart",
+    JSON.stringify(cart)
+  );
+
+  // انتقال مستقیم به صفحه سبد خرید
+  window.location.href = "cart.html";
+      }
 
     function formatPrice(price) {
       return Number(price || 0).toLocaleString("fa-IR");
@@ -2956,7 +2977,6 @@
     });
 
   </script>
-
 
     <a class="rubika-support" href="https://rubika.ir/" target="_blank"
        rel="noopener" aria-label="پشتیبانی">
