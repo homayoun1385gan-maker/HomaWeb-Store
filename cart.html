@@ -1,1 +1,1060 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <title>سبد خرید و تکمیل سفارش | HomaWeb</title>
+  <meta name="description" content="سبد خرید HomaWeb برای بررسی خدمات، مشاهده قیمت، وارد کردن مشخصات مشتری و تکمیل سفارش.">
+  <meta name="keywords" content="سبد خرید, ثبت سفارش, خرید خدمات طراحی سایت, ربات, تبلیغات, HomaWeb">
+  <meta name="robots" content="index, follow">
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Tahoma, Arial, sans-serif;
+      background: #f7f5ff;
+      color: #24213a;
+      min-height: 100vh;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    header {
+      background: linear-gradient(135deg, #5420c7, #8b35ef);
+      color: white;
+      padding: 18px 6%;
+      box-shadow: 0 5px 25px rgba(60, 20, 130, .15);
+    }
+
+    .header-inner {
+      max-width: 1200px;
+      margin: auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .brand {
+      font-size: 25px;
+      font-weight: 900;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    nav a {
+      opacity: .92;
+      transition: .2s;
+    }
+
+    nav a:hover {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    .cart-badge {
+      background: white;
+      color: #6327d4;
+      padding: 9px 16px;
+      border-radius: 30px;
+      font-weight: 900;
+    }
+
+    main {
+      max-width: 1150px;
+      margin: 45px auto;
+      padding: 0 20px;
+    }
+
+    .page-title {
+      text-align: center;
+      margin-bottom: 35px;
+    }
+
+    .page-title h1 {
+      font-size: 34px;
+      color: #4d1bb7;
+      margin-bottom: 12px;
+    }
+
+    .page-title p {
+      color: #777;
+      line-height: 1.9;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1.5fr .8fr;
+      gap: 25px;
+      align-items: start;
+    }
+
+    .card {
+      background: white;
+      border-radius: 24px;
+      padding: 25px;
+      box-shadow: 0 8px 30px rgba(55, 25, 120, .08);
+      margin-bottom: 22px;
+    }
+
+    .card h2 {
+      color: #4d1bb7;
+      font-size: 21px;
+      margin-bottom: 20px;
+    }
+
+    .empty {
+      text-align: center;
+      padding: 55px 20px;
+      color: #777;
+      line-height: 2;
+    }
+
+    .empty .icon {
+      font-size: 55px;
+      margin-bottom: 15px;
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 55px 1fr auto;
+      gap: 15px;
+      align-items: center;
+      padding: 17px 0;
+      border-bottom: 1px solid #eee;
+    }
+
+    .product:last-child {
+      border-bottom: none;
+    }
+
+    .product-icon {
+      width: 55px;
+      height: 55px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f0eaff;
+      border-radius: 17px;
+      font-size: 27px;
+    }
+
+    .product-info h3 {
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .product-info p {
+      color: #777;
+      font-size: 12px;
+      line-height: 1.7;
+      margin-bottom: 7px;
+    }
+
+    .unit-price {
+      color: #6526d2;
+      font-weight: 900;
+      font-size: 14px;
+    }
+
+    .product-actions {
+      text-align: left;
+    }
+
+    .quantity {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 8px;
+      justify-content: flex-end;
+    }
+
+    .quantity button {
+      width: 29px;
+      height: 29px;
+      border: none;
+      border-radius: 9px;
+      background: #eee7ff;
+      color: #5d20c7;
+      font-size: 18px;
+      cursor: pointer;
+      font-weight: 900;
+    }
+
+    .quantity span {
+      min-width: 22px;
+      text-align: center;
+      font-weight: 900;
+    }
+
+    .remove {
+      border: none;
+      background: transparent;
+      color: #e04747;
+      cursor: pointer;
+      font-size: 12px;
+    }
+
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 15px;
+      padding: 11px 0;
+      color: #555;
+    }
+
+    .summary-row.total {
+      border-top: 2px solid #eee;
+      margin-top: 8px;
+      padding-top: 18px;
+      font-size: 20px;
+      font-weight: 900;
+      color: #4d1bb7;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .field {
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .field.full {
+      grid-column: 1 / -1;
+    }
+
+    label {
+      font-size: 13px;
+      font-weight: 800;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid #ddd5f5;
+      border-radius: 13px;
+      padding: 13px 14px;
+      font-family: inherit;
+      font-size: 14px;
+      outline: none;
+      background: #fff;
+    }
+
+    input:focus,
+    textarea:focus,
+    select:focus {
+      border-color: #7431df;
+      box-shadow: 0 0 0 3px rgba(116,49,223,.08);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .required {
+      color: #e04747;
+    }
+
+    .payment-options {
+      display: grid;
+      gap: 12px;
+    }
+
+    .payment-option {
+      border: 1px solid #ddd5f5;
+      border-radius: 14px;
+      padding: 15px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .payment-option:hover {
+      background: #faf8ff;
+      border-color: #8b5be5;
+    }
+
+    .submit-btn {
+      width: 100%;
+      border: none;
+      border-radius: 16px;
+      padding: 16px;
+      background: linear-gradient(135deg, #5420c7, #8b35ef);
+      color: white;
+      font-family: inherit;
+      font-size: 16px;
+      font-weight: 900;
+      cursor: pointer;
+      margin-top: 18px;
+      box-shadow: 0 9px 25px rgba(84,32,199,.22);
+      transition: .25s;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-2px);
+    }
+
+    .support-btn {
+      display: block;
+      text-align: center;
+      background: #f0eaff;
+      color: #5d20c7;
+      padding: 13px;
+      border-radius: 14px;
+      font-weight: 900;
+      margin-top: 12px;
+    }
+
+    .success {
+      display: none;
+      text-align: center;
+      padding: 35px 20px;
+    }
+
+    .success-icon {
+      font-size: 60px;
+      margin-bottom: 15px;
+    }
+
+    .order-number {
+      margin: 20px auto;
+      padding: 15px;
+      background: #f2edff;
+      border-radius: 14px;
+      color: #5420c7;
+      font-size: 20px;
+      font-weight: 900;
+      max-width: 360px;
+    }
+
+    footer {
+      margin-top: 60px;
+      padding: 35px 20px;
+      background: #21153c;
+      color: #ddd;
+      text-align: center;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+
+    footer a {
+      color: #fff;
+      font-size: 13px;
+    }
+
+    footer p {
+      font-size: 12px;
+      opacity: .75;
+    }
+
+    @media (max-width: 850px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .header-inner {
+        flex-direction: column;
+      }
+
+      nav {
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .page-title h1 {
+        font-size: 27px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .field.full {
+        grid-column: auto;
+      }
+
+      .product {
+        grid-template-columns: 50px 1fr;
+      }
+
+      .product-actions {
+        grid-column: 2;
+        text-align: right;
+      }
+
+      .quantity {
+        justify-content: flex-start;
+      }
+
+      main {
+        margin-top: 30px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="header-inner">
+
+    <a href="index.html" class="brand">HomaWeb</a>
+
+    <nav>
+      <a href="index.html">خانه</a>
+      <a href="services.html">خدمات</a>
+      <a href="bots.html">ربات‌ها</a>
+      <a href="ads.html">تبلیغات</a>
+      <a href="portfolio.html">نمونه‌کارها</a>
+      <a href="about.html">درباره ما</a>
+      <a href="contact.html">تماس</a>
+    </nav>
+
+    <a href="cart.html" class="cart-badge">
+      🛒 سبد خرید
+      <span id="cartCount">0</span>
+    </a>
+
+  </div>
+</header>
+
+<main>
+
+  <section class="page-title">
+    <h1>🛒 سبد خرید و تکمیل سفارش</h1>
+    <p>
+      خدمات انتخاب‌شده را بررسی کنید، مشخصات خود را وارد کنید
+      و سفارش خود را برای بررسی و پیگیری ثبت کنید.
+    </p>
+  </section>
+
+  <div id="cartContent">
+
+    <div class="layout">
+
+      <section>
+
+        <div class="card">
+          <h2>محصولات انتخاب‌شده</h2>
+          <div id="products"></div>
+        </div>
+
+        <div class="card">
+          <h2>مشخصات مشتری</h2>
+
+          <form id="orderForm">
+
+            <div class="form-grid">
+
+              <div class="field">
+                <label>
+                  نام و نام خانوادگی
+                  <span class="required">*</span>
+                </label>
+                <input
+                  id="customerName"
+                  type="text"
+                  placeholder="مثلاً علی رضایی"
+                  required
+                >
+              </div>
+
+              <div class="field">
+                <label>
+                  شماره موبایل
+                  <span class="required">*</span>
+                </label>
+                <input
+                  id="phone"
+                  type="tel"
+                  placeholder="09xxxxxxxxx"
+                  required
+                  pattern="09[0-9]{9}"
+                >
+              </div>
+
+              <div class="field">
+                <label>آیدی روبیکا</label>
+                <input
+                  id="rubika"
+                  type="text"
+                  placeholder="@YourID"
+                >
+              </div>
+
+              <div class="field">
+                <label>نوع سفارش</label>
+                <select id="orderType">
+                  <option value="عادی">سفارش عادی</option>
+                  <option value="فوری">سفارش فوری</option>
+                </select>
+              </div>
+
+              <div class="field full">
+                <label>توضیحات سفارش</label>
+                <textarea
+                  id="description"
+                  placeholder="جزئیات، امکانات یا توضیحات موردنظر خود را بنویسید..."
+                ></textarea>
+              </div>
+
+            </div>
+
+            <div style="margin-top:25px">
+              <h2>روش پرداخت</h2>
+
+              <div class="payment-options">
+
+                <label class="payment-option">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="هماهنگی با پشتیبانی"
+                    checked
+                  >
+                  هماهنگی با پشتیبانی
+                </label>
+
+                <label class="payment-option">
+                  <input
+                    type="radio"
+                    name="payment"
+                    value="پرداخت آنلاین"
+                  >
+                  پرداخت آنلاین
+                </label>
+
+              </div>
+            </div>
+
+            <button class="submit-btn" type="submit">
+              🔐 تکمیل و ثبت سفارش
+            </button>
+
+          </form>
+        </div>
+
+      </section>
+
+      <aside>
+
+        <div class="card">
+
+          <h2>خلاصه سفارش</h2>
+
+          <div class="summary-row">
+            <span>تعداد خدمات</span>
+            <strong id="itemCount">۰</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>مبلغ خدمات</span>
+            <strong id="subtotal">۰ تومان</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>تخفیف</span>
+            <strong id="discount">۰ تومان</strong>
+          </div>
+
+          <div class="summary-row total">
+            <span>مبلغ نهایی</span>
+            <strong id="total">۰ تومان</strong>
+          </div>
+
+          <a
+            href="contact.html"
+            class="support-btn"
+          >
+            💬 پشتیبانی
+          </a>
+
+        </div>
+
+      </aside>
+
+    </div>
+
+  </div>
+
+  <div id="successBox" class="card success">
+
+    <div class="success-icon">✅</div>
+
+    <h2>سفارش شما ثبت شد</h2>
+
+    <p>
+      اطلاعات سفارش با موفقیت ثبت شد.
+      برای ادامه مراحل می‌توانید با پشتیبانی در ارتباط باشید.
+    </p>
+
+    <div class="order-number" id="orderNumber"></div>
+
+    <a href="contact.html" class="support-btn">
+      💬 پشتیبانی
+    </a>
+
+    <a
+      href="index.html"
+      class="support-btn"
+      style="background:#eee8ff"
+    >
+      بازگشت به فروشگاه
+    </a>
+
+  </div>
+
+</main>
+
+<footer>
+
+  <div class="footer-links">
+    <a href="index.html">خانه</a>
+    <a href="services.html">خدمات</a>
+    <a href="bots.html">ربات‌ها</a>
+    <a href="ads.html">تبلیغات</a>
+    <a href="portfolio.html">نمونه‌کارها</a>
+    <a href="about.html">درباره ما</a>
+    <a href="contact.html">تماس و پشتیبانی</a>
+  </div>
+
+  <p>
+    © 2026 HomaWeb — تمامی حقوق محفوظ است.
+  </p>
+
+</footer>
+
+<script>
+
+  const STORAGE_KEY = "homweb_cart";
+
+  let cart = [];
+
+  function loadCart() {
+
+    try {
+
+      cart =
+        JSON.parse(
+          localStorage.getItem(STORAGE_KEY)
+        ) || [];
+
+    } catch (error) {
+
+      cart = [];
+
+    }
+
+    cart = cart.map(function(item) {
+
+      return {
+        name: item.name || "محصول",
+        icon: item.icon || "🛍️",
+        price: Number(item.price || 0),
+        quantity: Number(item.quantity || 1),
+        description: item.description || ""
+      };
+
+    });
+
+  }
+
+  function saveCart() {
+
+    localStorage.setItem(
+      STORAGE_KEY,
+      JSON.stringify(cart)
+    );
+
+  }
+
+  function formatPrice(price) {
+
+    return Number(price || 0)
+      .toLocaleString("fa-IR");
+
+  }
+
+  function render() {
+
+    const container =
+      document.getElementById("products");
+
+    if (!cart.length) {
+
+      container.innerHTML = `
+        <div class="empty">
+          <div class="icon">🛒</div>
+          <strong>سبد خرید شما خالی است.</strong>
+          <p>
+            ابتدا از فروشگاه یک محصول یا خدمت به سبد خرید اضافه کنید.
+          </p>
+
+          <a
+            href="index.html"
+            class="support-btn"
+            style="max-width:260px;margin:20px auto 0"
+          >
+            رفتن به فروشگاه
+          </a>
+        </div>
+      `;
+
+      updateSummary();
+
+      return;
+
+    }
+
+    container.innerHTML = "";
+
+    cart.forEach(function(item, index) {
+
+      const product =
+        document.createElement("div");
+
+      product.className = "product";
+
+      product.innerHTML = `
+
+        <div class="product-icon">
+          ${escapeHtml(item.icon)}
+        </div>
+
+        <div class="product-info">
+
+          <h3>
+            ${escapeHtml(item.name)}
+          </h3>
+
+          <p>
+            ${escapeHtml(
+              item.description ||
+              "خدمت انتخاب‌شده از فروشگاه HomaWeb."
+            )}
+          </p>
+
+          <div class="unit-price">
+            ${formatPrice(item.price)} تومان
+          </div>
+
+        </div>
+
+        <div class="product-actions">
+
+          <div class="quantity">
+
+            <button
+              type="button"
+              onclick="changeQuantity(${index}, -1)"
+            >
+              −
+            </button>
+
+            <span>
+              ${item.quantity}
+            </span>
+
+            <button
+              type="button"
+              onclick="changeQuantity(${index}, 1)"
+            >
+              +
+            </button>
+
+          </div>
+
+          <button
+            type="button"
+            class="remove"
+            onclick="removeItem(${index})"
+          >
+            حذف محصول
+          </button>
+
+        </div>
+
+      `;
+
+      container.appendChild(product);
+
+    });
+
+    updateSummary();
+
+  }
+
+  function escapeHtml(value) {
+
+    return String(value)
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+
+  }
+
+  function changeQuantity(index, change) {
+
+    if (!cart[index]) return;
+
+    cart[index].quantity += change;
+
+    if (cart[index].quantity < 1) {
+
+      cart[index].quantity = 1;
+
+    }
+
+    saveCart();
+
+    render();
+
+  }
+
+  function removeItem(index) {
+
+    if (!cart[index]) return;
+
+    cart.splice(index, 1);
+
+    saveCart();
+
+    render();
+
+  }
+
+  function updateSummary() {
+
+    let count = 0;
+    let subtotal = 0;
+
+    cart.forEach(function(item) {
+
+      count += item.quantity;
+
+      subtotal +=
+        Number(item.price) *
+        Number(item.quantity);
+
+    });
+
+    const discount = 0;
+
+    const total =
+      subtotal - discount;
+
+    document.getElementById("cartCount").textContent =
+      count.toLocaleString("fa-IR");
+
+    document.getElementById("itemCount").textContent =
+      count.toLocaleString("fa-IR");
+
+    document.getElementById("subtotal").textContent =
+      formatPrice(subtotal) + " تومان";
+
+    document.getElementById("discount").textContent =
+      formatPrice(discount) + " تومان";
+
+    document.getElementById("total").textContent =
+      formatPrice(total) + " تومان";
+
+  }
+
+  function generateOrderNumber() {
+
+    const now = Date.now()
+      .toString()
+      .slice(-6);
+
+    const random =
+      Math.floor(
+        100 + Math.random() * 900
+      );
+
+    return "HW-" + now + random;
+
+  }
+
+  document
+    .getElementById("orderForm")
+    .addEventListener("submit", function(event) {
+
+      event.preventDefault();
+
+      if (!cart.length) {
+
+        alert(
+          "سبد خرید شما خالی است."
+        );
+
+        return;
+
+      }
+
+      const name =
+        document
+          .getElementById("customerName")
+          .value
+          .trim();
+
+      const phone =
+        document
+          .getElementById("phone")
+          .value
+          .trim();
+
+      const rubika =
+        document
+          .getElementById("rubika")
+          .value
+          .trim();
+
+      const description =
+        document
+          .getElementById("description")
+          .value
+          .trim();
+
+      const orderType =
+        document
+          .getElementById("orderType")
+          .value;
+
+      const payment =
+        document
+          .querySelector(
+            'input[name="payment"]:checked'
+          )
+          .value;
+
+      if (!name || !phone) {
+
+        alert(
+          "لطفاً نام و شماره موبایل را وارد کنید."
+        );
+
+        return;
+
+      }
+
+      const total =
+        cart.reduce(function(sum, item) {
+
+          return sum +
+            Number(item.price) *
+            Number(item.quantity);
+
+        }, 0);
+
+      const order = {
+
+        orderNumber:
+          generateOrderNumber(),
+
+        date:
+          new Date().toISOString(),
+
+        customer: {
+
+          name: name,
+
+          phone: phone,
+
+          rubika: rubika,
+
+          description: description,
+
+          orderType: orderType,
+
+          payment: payment
+
+        },
+
+        products:
+          cart.map(function(item) {
+
+            return {
+
+              name: item.name,
+
+              quantity: item.quantity,
+
+              price: item.price
+
+            };
+
+          }),
+
+        total: total
+
+      };
+
+      localStorage.setItem(
+        "homweb_last_order",
+        JSON.stringify(order)
+      );
+
+      document.getElementById(
+        "cartContent"
+      ).style.display = "none";
+
+      const success =
+        document.getElementById(
+          "successBox"
+        );
+
+      success.style.display = "block";
+
+      document.getElementById(
+        "orderNumber"
+      ).textContent =
+        "شماره سفارش: " +
+        order.orderNumber;
+
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+      });
+
+    });
+
+  loadCart();
+
+  render();
+
+</script>
+
+</body>
+    </html>
